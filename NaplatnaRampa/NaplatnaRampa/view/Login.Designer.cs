@@ -78,19 +78,19 @@ namespace NaplatnaRampa.view
             this.button1.Text = "Prijavi se";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // Lozinka
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 353);
+            this.ClientSize = new System.Drawing.Size(472, 323);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Lozinka";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
