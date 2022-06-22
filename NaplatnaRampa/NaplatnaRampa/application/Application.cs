@@ -8,5 +8,12 @@ namespace NaplatnaRampa.application
 {
     internal class Application
     {
+        static void Main(string[] args)
+        {
+           
+
+         
+            Application.Run(new LoginGUI(Globals.database));
+        }
     }
 }
