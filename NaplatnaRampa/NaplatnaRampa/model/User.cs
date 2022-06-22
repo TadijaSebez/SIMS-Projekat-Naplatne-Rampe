@@ -23,10 +23,12 @@ namespace NaplatnaRampa.model
         public String phone { get; set; }
         [BsonElement("addressId")]
         public ObjectId addressId;
+        [BsonElement("role")]
+        public Role role;
 
 
 
-        public User(string name, string surname, string email, string password, string phone, ObjectId addressId)
+        public User(string name, string surname, string email, string password, string phone, ObjectId addressId, Role role)
         {
             this._id = ObjectId.GenerateNewId();
             this.name = name;
@@ -35,6 +37,7 @@ namespace NaplatnaRampa.model
             this.password = password;
             this.phone = phone;
             this.addressId = addressId;
+            this.role = role;
         }
     }
 

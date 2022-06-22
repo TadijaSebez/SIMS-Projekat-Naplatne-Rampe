@@ -11,10 +11,10 @@ namespace NaplatnaRampa.model
 
         public ObjectId _id { get; set; }
         [BsonElement("name")]
-        public String name { get; set; }                   // TODO: promjeni kasnije
+        public String name { get; set; }     
         [BsonElement("surname")]
         public String surname{ get; set; }
-        [BsonElement("tagId")]                           // TODO: promjeni kasnije
+        [BsonElement("tagId")]                      
         public ObjectId tagId { get; set; }
 
 
