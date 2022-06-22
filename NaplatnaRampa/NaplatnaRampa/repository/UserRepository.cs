@@ -9,7 +9,7 @@ using NaplatnaRampa.model;
 
 namespace NaplatnaRampa.repository
 {
-    internal class UserRepository
+    internal class UserRepository: IUserRepository
     {
         public IMongoCollection<User> collection;
 
