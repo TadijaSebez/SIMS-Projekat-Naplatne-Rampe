@@ -25,5 +25,10 @@ namespace NaplatnaRampa.contoller
         {
             return sectionRepository.GetById(id);
         }
+
+        public Section GetByStations(TollStation firstStation, TollStation secondStation)
+        {
+            return sectionRepository.GetByStations(firstStation._id, secondStation._id);
+        }
     }
 }

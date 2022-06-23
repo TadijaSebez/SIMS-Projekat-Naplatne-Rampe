@@ -39,6 +39,12 @@ namespace NaplatnaRampa.repository
             return collection.Find(item => item._id == id).FirstOrDefault();
         }
 
+        public Section GetByStations(ObjectId firstStationId, ObjectId secondStationId)
+        {
+            return collection.Find(item => (item.firstStationId == firstStationId && item.secondStationId == secondStationId) 
+                || (item.firstStationId == secondStationId && item.secondStationId == firstStationId)).FirstOrDefault();
+        }
+
         public void Insert(Section driver)
         {
             collection.InsertOne(driver);

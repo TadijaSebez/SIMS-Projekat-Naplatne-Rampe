@@ -14,7 +14,8 @@ namespace NaplatnaRampa.model
         public ObjectId readTagId { get; set; }
 
 
-        public ElectronicPayment(float price, VehicleType vehicleType, TypeOfCurrency typeOfCurrency, ObjectId tollRoadId, ObjectId readTagId): base(price, vehicleType, typeOfCurrency, tollRoadId)
+        public ElectronicPayment(float price, VehicleType vehicleType, TypeOfCurrency typeOfCurrency, ObjectId tollRoadId, DateTime dateTime, ObjectId readTagId): 
+            base(price, vehicleType, typeOfCurrency, tollRoadId, dateTime)
         {
             this.readTagId = readTagId;
         }

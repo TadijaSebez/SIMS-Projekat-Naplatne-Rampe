@@ -25,5 +25,10 @@ namespace NaplatnaRampa.contoller
         {
             return tollStationRepository.GetById(id);
         }
+
+        public TollStation GetByName(string name)
+        {
+            return tollStationRepository.GetByName(name);
+        }
     }
 }

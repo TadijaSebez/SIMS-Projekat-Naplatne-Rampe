@@ -26,6 +26,11 @@ namespace NaplatnaRampa.repository
             return collection.Find(item => item._id == id).FirstOrDefault();
         }
 
+        public TollStation GetByName(string name)
+        {
+            return collection.Find(item => item.name == name).FirstOrDefault();
+        }
+
         public void Insert(TollStation tollStation)
         {
             collection.InsertOne(tollStation);

@@ -36,6 +36,9 @@ namespace NaplatnaRampa
             builder.RegisterType<PricelistItemController>().AsSelf();
             builder.RegisterType<SectionController>().AsSelf();
             builder.RegisterType<TollStationController>().AsSelf();
+            builder.RegisterType<TollRoadController>().AsSelf();
+            builder.RegisterType<SlipController>().AsSelf();
+            builder.RegisterType<PhysicalPaymentController>().AsSelf();
         }
     }
 }
