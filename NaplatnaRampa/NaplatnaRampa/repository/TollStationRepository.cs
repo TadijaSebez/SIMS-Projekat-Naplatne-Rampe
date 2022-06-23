@@ -26,7 +26,7 @@ namespace NaplatnaRampa.repository
         }
         public void GetCollection()
         {
-            this.collection = database.GetCollection<TollStation>("TollStation");
+            this.collection = database.GetCollection<TollStation>("TollStations");
         }
         public List<TollStation> GetAll()
         {
