@@ -16,11 +16,11 @@ namespace NaplatnaRampa.application
         {
             Globals.Load();
 
-            UserRepository repo = new UserRepository();
+         //   UserRepository repo = new UserRepository();
            // repo.Insert(new User("Ime", "Prezime", "mejl", "pass", "tel", new Address("ulica", 4, new Place(132, "nesto")._id)._id));
             
-            Login login = new Login();
-            Application.Run(login);
+           // Login login = new Login();
+            Application.Run(new Login(Globals.database));
         }
     }
 }

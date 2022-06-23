@@ -9,14 +9,29 @@ using NaplatnaRampa.model;
 
 namespace NaplatnaRampa.repository
 {
-    internal class UserRepository: IUserRepository
+   public class UserRepository: IUserRepository
     {
         public IMongoCollection<User> collection;
-
+        public IMongoDatabase database;
         public UserRepository()
         {
-            collection = Globals.database.GetCollection<User>("Users");
+            GetDatabase();
+            GetCollection();
+
         }
+        public void GetDatabase()
+        {
+            var settings = MongoClientSettings.FromConnectionString("mongodb+srv://anastasija:anastasija2001@cluster0.tlsbsly.mongodb.net/test");
+            settings.ServerApi = new ServerApi(ServerApiVersion.V1);
+            var client = new MongoClient(settings);
+            this.database = client.GetDatabase("SIMS");
+        }
+        public void GetCollection()
+        {
+            this.collection = database.GetCollection<User>("Users");
+        }
+
+     
 
         public List<User> GetAll()
         {
@@ -43,5 +58,13 @@ namespace NaplatnaRampa.repository
             collection.ReplaceOne(item => item._id == user._id, user);
 
         }
+
+        public User CheckCredentials(string email, string password)
+        {
+            return collection.Find(item => item.password == password & item.email == email).FirstOrDefault();
+
+        }
+
+
     }
 }

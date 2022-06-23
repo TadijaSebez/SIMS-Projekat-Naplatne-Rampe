@@ -5,7 +5,7 @@ using MongoDB.Bson;
 
 namespace NaplatnaRampa
 {
-    internal interface IRepository<TEntity>
+     public interface IRepository<TEntity>
     {
         void Insert(TEntity entity);
         void Update(TEntity entity);
