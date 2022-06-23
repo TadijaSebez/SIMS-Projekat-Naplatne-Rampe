@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NaplatnaRampa.model
 {
-    enum Role
+    public enum Role
     {
         CHARGEER,
         BOSS,

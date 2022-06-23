@@ -6,13 +6,10 @@ using System.Text;
 
 namespace NaplatnaRampa.repository
 {
-    interface IUserRepository
+    public interface IUserRepository : IRepository<User>
     {
-        List<User> GetAll();
-        User GetById(ObjectId id);
-        void Insert(User user);
-        void Delete(ObjectId id);
-        void Update(User user);
+
+        public User CheckCredentials(string email, string password);
 
     }
 }
