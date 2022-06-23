@@ -5,7 +5,7 @@ using NaplatnaRampa.model;
 
 namespace NaplatnaRampa.repository
 {
-    internal interface IDriverRepository : IRepository<Driver>
+    public interface IDriverRepository : IRepository<Driver>
     {
     }
 }

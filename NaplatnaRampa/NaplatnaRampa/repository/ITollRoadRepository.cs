@@ -5,7 +5,7 @@ using NaplatnaRampa.model;
 
 namespace NaplatnaRampa.repository
 {
-    internal interface ITollRoadRepository : IRepository<TollRoad>
+    public interface ITollRoadRepository : IRepository<TollRoad>
     {
     }
 }

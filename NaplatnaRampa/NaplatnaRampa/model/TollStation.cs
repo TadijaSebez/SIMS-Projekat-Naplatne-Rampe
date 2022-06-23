@@ -6,7 +6,7 @@ using System.Text;
 
 namespace NaplatnaRampa.model
 {
-    class TollStation
+    public class TollStation
     {
         public ObjectId _id { get; set; }
         [BsonElement("name")]

@@ -5,7 +5,7 @@ using NaplatnaRampa.model;
 
 namespace NaplatnaRampa.repository
 {
-    interface ISectionRepository : IRepository<Section>
+    public interface ISectionRepository : IRepository<Section>
     {
     }
 }

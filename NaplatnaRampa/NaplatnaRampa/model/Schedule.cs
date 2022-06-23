@@ -6,7 +6,7 @@ using System.Text;
 
 namespace NaplatnaRampa.model
 {
-    class Schedule
+    public class Schedule
     {
         public ObjectId _id { get; set; }
         [BsonElement("date")]

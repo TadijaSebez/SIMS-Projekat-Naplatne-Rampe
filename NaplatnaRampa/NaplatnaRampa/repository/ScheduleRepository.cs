@@ -7,7 +7,7 @@ using System.Text;
 
 namespace NaplatnaRampa.repository
 {
-    class ScheduleRepository : IScheduleRepository
+    public class ScheduleRepository : IScheduleRepository
     {
         public IMongoCollection<Schedule> collection;
 

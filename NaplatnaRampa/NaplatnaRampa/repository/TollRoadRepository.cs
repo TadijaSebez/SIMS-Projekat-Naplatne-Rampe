@@ -5,7 +5,7 @@ using NaplatnaRampa.model;
 
 namespace NaplatnaRampa.repository
 {
-    class TollRoadRepository : ITollRoadRepository
+    public class TollRoadRepository : ITollRoadRepository
     {
 
         public IMongoCollection<TollRoad> collection;

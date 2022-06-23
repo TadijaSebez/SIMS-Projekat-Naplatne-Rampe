@@ -6,7 +6,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace NaplatnaRampa.model
 {
-    class Section
+    public class Section
     {
 
         public ObjectId _id { get; set; }

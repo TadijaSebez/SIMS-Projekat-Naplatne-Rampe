@@ -8,7 +8,7 @@ using System.Text;
 
 namespace NaplatnaRampa.contoller
 {
-    class TollStationController
+    public class TollStationController
     {
         public ITollStationRepository tollStationRepository;
         public TollStationController()
