@@ -28,7 +28,7 @@ namespace NaplatnaRampa.view
 
         private void TableUsers_Load(object sender, EventArgs e)
         {
-            DataTable userTable = new DataTable();
+             DataTable userTable = new DataTable();
             userTable.Columns.Add("Ime");
             userTable.Columns.Add("Prezime");
             userTable.Columns.Add("Email");
