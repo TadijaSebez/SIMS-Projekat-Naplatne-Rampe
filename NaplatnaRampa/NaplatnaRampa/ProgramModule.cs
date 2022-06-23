@@ -14,6 +14,17 @@ namespace NaplatnaRampa
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<UserRepository>().As<IUserRepository>();
+            builder.RegisterType<TollRoadRepository>().As<ITollRoadRepository>();
+            builder.RegisterType<TagRepository>().As<ITagRepository>();
+            builder.RegisterType<SlipRepository>().As<ISlipRepository>();
+            builder.RegisterType<SectionRepository>().As<ISectionRepository>();
+            builder.RegisterType<PlaceRepository>().As<IPlaceRepository>();
+            builder.RegisterType<PhysicalPaymentRepository>().As<IPhysicalPaymentRepository>();
+            builder.RegisterType<PaymentRepository>().As<IPaymentRepository>();
+            builder.RegisterType<ElectronicPaymentRepository>().As<IElectronicPaymentRepository>();
+            builder.RegisterType<DriverRepository>().As<IDriverRepository>();
+            builder.RegisterType<AddressRepository>().As<IAddressRepository>();
+
             builder.RegisterType<UserService>().AsSelf();
         }
         }

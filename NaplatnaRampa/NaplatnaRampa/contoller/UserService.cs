@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Autofac;
 using NaplatnaRampa.model;
 using NaplatnaRampa.repository;
 
@@ -11,9 +12,9 @@ namespace NaplatnaRampa.contoller
     {
         public IUserRepository userRepository;
 
-        public UserService(IUserRepository userRepository)
+        public UserService()
         {
-            this.userRepository = userRepository;
+            this.userRepository = Globals.container.Resolve<IUserRepository>();
         }
         public User CheckCredentials(string email, string password)
         {
