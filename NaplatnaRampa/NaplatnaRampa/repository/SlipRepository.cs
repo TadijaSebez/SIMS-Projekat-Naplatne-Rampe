@@ -7,7 +7,7 @@ using System.Text;
 
 namespace NaplatnaRampa.repository
 {
-    class SlipRepository: ISlipRepository
+    public class SlipRepository: ISlipRepository
     {
         public IMongoCollection<Slip> collection;
 

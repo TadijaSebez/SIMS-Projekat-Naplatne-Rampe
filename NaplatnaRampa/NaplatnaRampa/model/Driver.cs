@@ -6,7 +6,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace NaplatnaRampa.model
 {
-    class Driver
+    public class Driver
     {
 
         public ObjectId _id { get; set; }

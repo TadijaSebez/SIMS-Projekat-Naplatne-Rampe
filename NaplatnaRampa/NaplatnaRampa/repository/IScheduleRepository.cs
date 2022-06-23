@@ -6,12 +6,13 @@ using System.Text;
 
 namespace NaplatnaRampa.repository
 {
-    interface IScheduleRepository
+    public interface IScheduleRepository 
     {
         List<Schedule> GetAll();
         Schedule GetById(ObjectId id);
-        void Insert(Schedule schedule);
+        void Insert(Schedule chedule);
         void Delete(ObjectId id);
         void Update(Schedule schedule);
+
     }
 }

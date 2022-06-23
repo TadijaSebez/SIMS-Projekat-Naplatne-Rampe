@@ -6,7 +6,7 @@ using System.Text;
 
 namespace NaplatnaRampa.model
 {
-    class Slip
+    public class Slip
     {
         public ObjectId _id { get; set; }
         [BsonElement("dateTime")]

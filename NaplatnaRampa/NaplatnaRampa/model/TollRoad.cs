@@ -6,7 +6,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace NaplatnaRampa.model
 {
-    class TollRoad
+    public class TollRoad
     {
         public ObjectId _id { get; set; }
         [BsonElement("number")]
