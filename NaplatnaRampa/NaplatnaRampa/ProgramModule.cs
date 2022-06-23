@@ -32,6 +32,10 @@ namespace NaplatnaRampa
             builder.RegisterType<UserController>().AsSelf();
             builder.RegisterType<AddressController>().AsSelf();
             builder.RegisterType<PlaceController>().AsSelf();
+            builder.RegisterType<PricelistController>().AsSelf();
+            builder.RegisterType<PricelistItemController>().AsSelf();
+            builder.RegisterType<SectionController>().AsSelf();
+            builder.RegisterType<TollStationController>().AsSelf();
         }
-        }
+    }
 }
