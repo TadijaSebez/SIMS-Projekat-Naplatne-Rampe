@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using NaplatnaRampa.repository;
@@ -19,6 +19,11 @@ namespace NaplatnaRampa.contoller
         public PhysicalPayment GetById(ObjectId id)
         {
             return paymentRepository.GetById(id);
+        }
+      
+        public void Save(PhysicalPayment payment)
+        {
+            paymentRepository.Insert(payment);
         }
     }
 }

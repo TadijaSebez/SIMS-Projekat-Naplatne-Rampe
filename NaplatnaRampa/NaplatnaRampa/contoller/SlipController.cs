@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using NaplatnaRampa.repository;
@@ -16,6 +16,11 @@ namespace NaplatnaRampa.contoller
             this.slipRepository = Globals.container.Resolve<ISlipRepository>();
         }
 
+        public void Save(Slip slip)
+        {
+            slipRepository.Insert(slip);
+        }
+      
         public Slip GetById(ObjectId id)
         {
             return slipRepository.GetById(id);

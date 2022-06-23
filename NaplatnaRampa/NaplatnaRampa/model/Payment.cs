@@ -19,15 +19,18 @@ namespace NaplatnaRampa.model
         public TypeOfCurrency currency { get; set; }
         [BsonElement("tollRoadId")]
         public ObjectId tollRoadId { get; set; }
+        [BsonElement("dateTime")]
+        public DateTime dateTime { get; set; }
 
 
-        public Payment(float price, VehicleType vehicleType, TypeOfCurrency typeOfCurrency, ObjectId tollRoadId)
+        public Payment(float price, VehicleType vehicleType, TypeOfCurrency typeOfCurrency, ObjectId tollRoadId, DateTime dateTime)
         {
             this._id = this._id = ObjectId.GenerateNewId();
             this.price = price;
             this.VehicleType = vehicleType;
             this.currency = currency;
             this.tollRoadId = tollRoadId;
+            this.dateTime = dateTime;
         }
 
 

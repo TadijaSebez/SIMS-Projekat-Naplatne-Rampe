@@ -37,6 +37,11 @@ namespace NaplatnaRampa.repository
             return collection.Find(item => item._id == id).FirstOrDefault();
         }
 
+        public TollRoad GetByStationAndNumber(ObjectId stationId, int number)
+        {
+            return collection.Find(item => item.tollStationId == stationId && item.number == number).FirstOrDefault();
+        }
+
         public void Insert(TollRoad tollBooth)
         {
             collection.InsertOne(tollBooth);

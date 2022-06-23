@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using NaplatnaRampa.repository;
@@ -16,6 +16,11 @@ namespace NaplatnaRampa.contoller
             this.tollRoadRepository = Globals.container.Resolve<ITollRoadRepository>();
         }
 
+        public TollRoad GetByStationAndNumber(TollStation station, int number)
+        {
+            return tollRoadRepository.GetByStationAndNumber(station._id, number);
+        }
+      
         public TollRoad GetById(ObjectId id)
         {
             return tollRoadRepository.GetById(id);

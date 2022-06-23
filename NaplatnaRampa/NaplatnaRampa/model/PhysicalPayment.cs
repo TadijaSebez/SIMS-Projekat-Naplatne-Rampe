@@ -10,14 +10,14 @@ namespace NaplatnaRampa.model
 {
     public class PhysicalPayment : Payment
     {
-        public ObjectId _id { get; set; }
         [BsonElement("paid")]
         public float paid;
         [BsonElement("slipId")]
         public ObjectId slipId { get; set; }
 
 
-        public PhysicalPayment(float price, VehicleType vehicleType, TypeOfCurrency typeOfCurrency, ObjectId tollRoadId,float paid, ObjectId slipId): base(price,vehicleType, typeOfCurrency, tollRoadId)
+        public PhysicalPayment(float price, VehicleType vehicleType, TypeOfCurrency typeOfCurrency, ObjectId tollRoadId, DateTime dateTime, float paid, ObjectId slipId): 
+            base(price,vehicleType, typeOfCurrency, tollRoadId, dateTime)
         {
             this.paid = paid;
             this.slipId = slipId;

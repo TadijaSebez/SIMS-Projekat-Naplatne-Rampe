@@ -26,7 +26,7 @@ namespace NaplatnaRampa.repository
         }
         public void GetCollection()
         {
-            this.collection = database.GetCollection<TollStation>("TollStation");
+            this.collection = database.GetCollection<TollStation>("TollStations");
         }
         public List<TollStation> GetAll()
         {
@@ -36,6 +36,11 @@ namespace NaplatnaRampa.repository
         public TollStation GetById(ObjectId id)
         {
             return collection.Find(item => item._id == id).FirstOrDefault();
+        }
+
+        public TollStation GetByName(string name)
+        {
+            return collection.Find(item => item.name == name).FirstOrDefault();
         }
 
         public void Insert(TollStation tollStation)
