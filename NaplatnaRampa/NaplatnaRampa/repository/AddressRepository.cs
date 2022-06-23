@@ -7,7 +7,7 @@ using System.Text;
 
 namespace NaplatnaRampa.repository
 {
-    class AddressRepository : IAddressRepository
+    public class AddressRepository : IAddressRepository
     {
         public IMongoCollection<Address> collection;
         public IMongoDatabase database;

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace NaplatnaRampa.repository
 {
-    class PlaceRepository: IPlaceRepository
+    public class PlaceRepository: IPlaceRepository
     {
         public IMongoCollection<Place> collection;
 

@@ -35,7 +35,7 @@ namespace NaplatnaRampa.view
                 statusLabel.Visible = true;
             }
             else {
-                this.loggedUser = function.userService.CheckCredentials(emailBox1.Text, lozinkaBox2.Text);
+                this.loggedUser = function.userController.CheckCredentials(emailBox1.Text, lozinkaBox2.Text);
                 statusLabel.Visible = false;
                 this.Hide();
 
