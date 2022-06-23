@@ -6,7 +6,7 @@ using System.Text;
 
 namespace NaplatnaRampa.model
 {
-    class Pricelist
+    public class Pricelist
     {
         public ObjectId _id { get; set; }
         [BsonElement("validFrom")]

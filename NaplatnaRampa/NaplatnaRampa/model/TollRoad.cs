@@ -6,15 +6,18 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace NaplatnaRampa.model
 {
-     class TollRoad
+    class TollRoad
     {
         public ObjectId _id { get; set; }
+        [BsonElement("number")]
+        public int number { get; set; }
         [BsonElement("tollStationId")]
         public ObjectId tollStationId{ get; set; }
        
-        public TollRoad(ObjectId tollStationId)
+        public TollRoad(int number, ObjectId tollStationId)
         {
             this._id = ObjectId.GenerateNewId();
+            this.number = number;
             this.tollStationId = tollStationId;
         }
     }

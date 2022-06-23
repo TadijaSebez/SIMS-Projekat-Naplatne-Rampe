@@ -8,6 +8,7 @@ using NaplatnaRampa.model;
 using NaplatnaRampa.view;
 using System.Windows.Forms;
 using MongoDB.Bson;
+using Autofac;
 
 namespace NaplatnaRampa.application
 {
@@ -19,6 +20,9 @@ namespace NaplatnaRampa.application
 
             Application.Run(new Login(Globals.database));
             //Application.Run(new TableUsers());
+            //Application.Run(new TablePricelists());
+            //IPricelistRepository repo = Globals.container.Resolve<IPricelistRepository>();
+            //Application.Run(new TablePricelistItems(repo.GetAll()[1]));
         }
     }
 }

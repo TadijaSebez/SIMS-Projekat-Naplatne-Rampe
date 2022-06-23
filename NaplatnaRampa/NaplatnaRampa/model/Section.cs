@@ -10,23 +10,19 @@ namespace NaplatnaRampa.model
     {
 
         public ObjectId _id { get; set; }
-        [BsonElement("pocetnaStanica")]
-        public ObjectId pocetnaStanicaId { get; set; }                  
-        [BsonElement("krajnjaStanica")]
-        public ObjectId krajnjaStanicaId { get; set; }
-        [BsonElement("kilometri")]
-        public float kilometri { get; set; }
-      
+        [BsonElement("firstStationId")]
+        public ObjectId firstStationId { get; set; }                  
+        [BsonElement("secondStationId")]
+        public ObjectId secondStationId { get; set; }
+        [BsonElement("distance")]
+        public float distance { get; set; }
 
-
-        public Section(ObjectId pocetna, ObjectId krajnja, float kilometri)
+        public Section(ObjectId firstStationId, ObjectId secondStationId, float distance)
         {
             this._id = ObjectId.GenerateNewId();
-            this.pocetnaStanicaId = pocetna;
-            this.krajnjaStanicaId = krajnja;
-            this.kilometri = kilometri;
-
+            this.firstStationId = firstStationId;
+            this.secondStationId = secondStationId;
+            this.distance = distance;
         }
-
     }
 }
