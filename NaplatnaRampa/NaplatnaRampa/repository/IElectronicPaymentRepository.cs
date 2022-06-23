@@ -6,7 +6,7 @@ using System.Text;
 
 namespace NaplatnaRampa.repository
 {
-    interface IElectronicPaymentRepository : IRepository<ElectronicPayment>
+    public interface IElectronicPaymentRepository : IRepository<ElectronicPayment>
     {
         
     }

@@ -8,7 +8,7 @@ using static NaplatnaRampa.model.Vehicle;
 
 namespace NaplatnaRampa.model
 {
-    class ETag
+    public class ETag
     {
         public ObjectId _id { get; set; }
         [BsonElement("tipVozila")]

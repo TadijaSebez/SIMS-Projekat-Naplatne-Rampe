@@ -1,4 +1,4 @@
-﻿using MongoDB.Bson;
+using MongoDB.Bson;
 using NaplatnaRampa.model;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Text;
 
 namespace NaplatnaRampa.repository
 {
-    interface ITollStationRepository
+    public interface ITollStationRepository : IRepository<TollStation>
     {
         List<TollStation> GetAll();
         TollStation GetById(ObjectId id);

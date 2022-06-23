@@ -6,7 +6,7 @@ using NaplatnaRampa.model;
 
 namespace NaplatnaRampa.repository
 {
-    class TagRepository : ITagRepository
+    public class TagRepository : ITagRepository
     { 
 
         public IMongoCollection<ETag> collection;

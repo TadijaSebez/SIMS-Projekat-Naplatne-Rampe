@@ -7,7 +7,7 @@ using System.Text;
 
 namespace NaplatnaRampa.repository
 {
-    class ElectronicPaymentRepository : IElectronicPaymentRepository
+    public class ElectronicPaymentRepository : IElectronicPaymentRepository
     {
         public IMongoCollection<ElectronicPayment> collection;
 

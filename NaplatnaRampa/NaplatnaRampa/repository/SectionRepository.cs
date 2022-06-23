@@ -7,7 +7,7 @@ using NaplatnaRampa.model;
 
 namespace NaplatnaRampa.repository
 {
-    class SectionRepository : ISectionRepository
+    public class SectionRepository : ISectionRepository
     {
         public IMongoCollection<Section> collection;
         public IMongoDatabase database;

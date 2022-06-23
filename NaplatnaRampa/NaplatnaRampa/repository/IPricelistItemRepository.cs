@@ -6,7 +6,7 @@ using System.Text;
 
 namespace NaplatnaRampa.repository
 {
-    interface IPricelistItemRepository
+    public interface IPricelistItemRepository
     {
         List<PricelistItem> GetAll();
         PricelistItem GetById(ObjectId id);

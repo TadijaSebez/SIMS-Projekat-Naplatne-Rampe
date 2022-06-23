@@ -6,7 +6,7 @@ using System.Text;
 
 namespace NaplatnaRampa.repository
 {
-    interface ISlipRepository : IRepository<Slip>
+    public interface ISlipRepository : IRepository<Slip>
     {
         
     }

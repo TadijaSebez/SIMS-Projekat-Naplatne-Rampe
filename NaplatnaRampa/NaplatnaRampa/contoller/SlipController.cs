@@ -1,15 +1,16 @@
-﻿using Autofac;
-using NaplatnaRampa.model;
-using NaplatnaRampa.repository;
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using NaplatnaRampa.repository;
+using NaplatnaRampa.model;
+using Autofac;
+using MongoDB.Bson;
 namespace NaplatnaRampa.contoller
 {
-    class SlipController
+    public class SlipController
     {
         public ISlipRepository slipRepository;
+
         public SlipController()
         {
             this.slipRepository = Globals.container.Resolve<ISlipRepository>();
@@ -18,6 +19,11 @@ namespace NaplatnaRampa.contoller
         public void Save(Slip slip)
         {
             slipRepository.Insert(slip);
+        }
+      
+        public Slip GetById(ObjectId id)
+        {
+            return slipRepository.GetById(id);
         }
     }
 }

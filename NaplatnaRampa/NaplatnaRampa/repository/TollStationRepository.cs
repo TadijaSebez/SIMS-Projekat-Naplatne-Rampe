@@ -7,15 +7,27 @@ using System.Text;
 
 namespace NaplatnaRampa.repository
 {
-    class TollStationRepository : ITollStationRepository
+    public class TollStationRepository : ITollStationRepository
     {
         public IMongoCollection<TollStation> collection;
-        
+        public IMongoDatabase database;
         public TollStationRepository()
         {
-            this.collection = Globals.database.GetCollection<TollStation>("TollStations");
+            GetDatabase();
+            GetCollection();
+
         }
-        
+        public void GetDatabase()
+        {
+            var settings = MongoClientSettings.FromConnectionString("mongodb+srv://anastasija:anastasija2001@cluster0.tlsbsly.mongodb.net/test");
+            settings.ServerApi = new ServerApi(ServerApiVersion.V1);
+            var client = new MongoClient(settings);
+            this.database = client.GetDatabase("SIMS");
+        }
+        public void GetCollection()
+        {
+            this.collection = database.GetCollection<TollStation>("TollStation");
+        }
         public List<TollStation> GetAll()
         {
             return collection.Find(item => true).ToList();

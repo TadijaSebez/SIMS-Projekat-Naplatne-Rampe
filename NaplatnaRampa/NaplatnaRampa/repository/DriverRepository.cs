@@ -7,7 +7,7 @@ using NaplatnaRampa.model;
 
 namespace NaplatnaRampa.repository
 {
-    class DriverRepository : IDriverRepository
+    public class DriverRepository : IDriverRepository
     {
 
         public IMongoCollection<Driver> collection;

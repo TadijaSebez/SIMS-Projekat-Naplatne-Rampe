@@ -5,7 +5,7 @@ using NaplatnaRampa.model;
 
 namespace NaplatnaRampa.repository
 {
-    interface ITagRepository : IRepository<ETag>
+    public interface ITagRepository : IRepository<ETag>
     {
     }
 }

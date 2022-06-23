@@ -1,23 +1,29 @@
-﻿using Autofac;
-using NaplatnaRampa.model;
-using NaplatnaRampa.repository;
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using NaplatnaRampa.repository;
+using NaplatnaRampa.model;
+using Autofac;
+using MongoDB.Bson;
 namespace NaplatnaRampa.contoller
 {
-    class PhysicalPaymentController
+    public class PhysicalPaymentController
     {
-        public IPhysicalPaymentRepository physicalPaymentRepository;
+        public IPhysicalPaymentRepository paymentRepository;
+
         public PhysicalPaymentController()
         {
-            this.physicalPaymentRepository = Globals.container.Resolve<IPhysicalPaymentRepository>();
+            this.paymentRepository = Globals.container.Resolve<IPhysicalPaymentRepository>();
         }
 
+        public PhysicalPayment GetById(ObjectId id)
+        {
+            return paymentRepository.GetById(id);
+        }
+      
         public void Save(PhysicalPayment payment)
         {
-            physicalPaymentRepository.Insert(payment);
+            paymentRepository.Insert(payment);
         }
     }
 }
