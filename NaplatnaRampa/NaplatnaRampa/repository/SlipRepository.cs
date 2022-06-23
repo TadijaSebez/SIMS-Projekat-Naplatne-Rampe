@@ -11,11 +11,24 @@ namespace NaplatnaRampa.repository
     {
         public IMongoCollection<Slip> collection;
 
+        public IMongoDatabase database;
         public SlipRepository()
         {
-            collection = Globals.database.GetCollection<Slip>("Slips");
-        }
+            GetDatabase();
+            GetCollection();
 
+        }
+        public void GetDatabase()
+        {
+            var settings = MongoClientSettings.FromConnectionString("mongodb+srv://anastasija:anastasija2001@cluster0.tlsbsly.mongodb.net/test");
+            settings.ServerApi = new ServerApi(ServerApiVersion.V1);
+            var client = new MongoClient(settings);
+            this.database = client.GetDatabase("SIMS");
+        }
+        public void GetCollection()
+        {
+            this.collection = database.GetCollection<Slip>("Slips");
+        }
         public List<Slip> GetAll()
         {
             return collection.Find(item => true).ToList();

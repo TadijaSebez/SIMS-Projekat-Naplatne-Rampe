@@ -9,12 +9,24 @@ namespace NaplatnaRampa.repository
     {
 
         public IMongoCollection<TollRoad> collection;
-
+        public IMongoDatabase database;
         public TollRoadRepository()
         {
-            collection = Globals.database.GetCollection<TollRoad>("TollRoads");
-        }
+            GetDatabase();
+            GetCollection();
 
+        }
+        public void GetDatabase()
+        {
+            var settings = MongoClientSettings.FromConnectionString("mongodb+srv://anastasija:anastasija2001@cluster0.tlsbsly.mongodb.net/test");
+            settings.ServerApi = new ServerApi(ServerApiVersion.V1);
+            var client = new MongoClient(settings);
+            this.database = client.GetDatabase("SIMS");
+        }
+        public void GetCollection()
+        {
+            this.collection = database.GetCollection<TollRoad>("TollRoads");
+        }
         public List<TollRoad> GetAll()
         {
             return collection.Find(item => true).ToList();

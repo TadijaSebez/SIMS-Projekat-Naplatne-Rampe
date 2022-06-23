@@ -11,9 +11,23 @@ namespace NaplatnaRampa.repository
     {
         public IMongoCollection<Place> collection;
 
+        public IMongoDatabase database;
         public PlaceRepository()
         {
-            collection = Globals.database.GetCollection<Place>("Places");
+            GetDatabase();
+            GetCollection();
+
+        }
+        public void GetDatabase()
+        {
+            var settings = MongoClientSettings.FromConnectionString("mongodb+srv://anastasija:anastasija2001@cluster0.tlsbsly.mongodb.net/test");
+            settings.ServerApi = new ServerApi(ServerApiVersion.V1);
+            var client = new MongoClient(settings);
+            this.database = client.GetDatabase("SIMS");
+        }
+        public void GetCollection()
+        {
+            this.collection = database.GetCollection<Place>("Places");
         }
 
         public List<Place> GetAll()

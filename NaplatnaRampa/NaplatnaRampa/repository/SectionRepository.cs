@@ -10,10 +10,23 @@ namespace NaplatnaRampa.repository
     class SectionRepository : ISectionRepository
     {
         public IMongoCollection<Section> collection;
-
+        public IMongoDatabase database;
         public SectionRepository()
         {
-            collection = Globals.database.GetCollection<Section>("Sections");
+            GetDatabase();
+            GetCollection();
+
+        }
+        public void GetDatabase()
+        {
+            var settings = MongoClientSettings.FromConnectionString("mongodb+srv://anastasija:anastasija2001@cluster0.tlsbsly.mongodb.net/test");
+            settings.ServerApi = new ServerApi(ServerApiVersion.V1);
+            var client = new MongoClient(settings);
+            this.database = client.GetDatabase("SIMS");
+        }
+        public void GetCollection()
+        {
+            this.collection = database.GetCollection<Section>("Sections");
         }
 
         public List<Section> GetAll()

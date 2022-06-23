@@ -12,11 +12,24 @@ namespace NaplatnaRampa.repository
 
         public IMongoCollection<Driver> collection;
 
+        public IMongoDatabase database;
         public DriverRepository()
         {
-            collection = Globals.database.GetCollection<Driver>("Drivers");
-        }
+            GetDatabase();
+            GetCollection();
 
+        }
+        public void GetDatabase()
+        {
+            var settings = MongoClientSettings.FromConnectionString("mongodb+srv://anastasija:anastasija2001@cluster0.tlsbsly.mongodb.net/test");
+            settings.ServerApi = new ServerApi(ServerApiVersion.V1);
+            var client = new MongoClient(settings);
+            this.database = client.GetDatabase("SIMS");
+        }
+        public void GetCollection()
+        {
+            this.collection = database.GetCollection<Driver>("Drivers");
+        }
         public List<Driver> GetAll()
         {
             return collection.Find(item => true).ToList();

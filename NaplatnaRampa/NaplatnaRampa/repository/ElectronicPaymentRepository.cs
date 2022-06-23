@@ -11,11 +11,24 @@ namespace NaplatnaRampa.repository
     {
         public IMongoCollection<ElectronicPayment> collection;
 
+        public IMongoDatabase database;
         public ElectronicPaymentRepository()
         {
-            collection = Globals.database.GetCollection<ElectronicPayment>("ElectronicPayments");
-        }
+            GetDatabase();
+            GetCollection();
 
+        }
+        public void GetDatabase()
+        {
+            var settings = MongoClientSettings.FromConnectionString("mongodb+srv://anastasija:anastasija2001@cluster0.tlsbsly.mongodb.net/test");
+            settings.ServerApi = new ServerApi(ServerApiVersion.V1);
+            var client = new MongoClient(settings);
+            this.database = client.GetDatabase("SIMS");
+        }
+        public void GetCollection()
+        {
+            this.collection = database.GetCollection<ElectronicPayment>("ElectronicPayments");
+        }
         public List<ElectronicPayment> GetAll()
         {
             return collection.Find(item => true).ToList();

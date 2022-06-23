@@ -10,12 +10,24 @@ namespace NaplatnaRampa.repository
     { 
 
         public IMongoCollection<ETag> collection;
-
+        public IMongoDatabase database;
         public TagRepository()
         {
-            collection = Globals.database.GetCollection<ETag>("Tags");
-        }
+            GetDatabase();
+            GetCollection();
 
+        }
+        public void GetDatabase()
+        {
+            var settings = MongoClientSettings.FromConnectionString("mongodb+srv://anastasija:anastasija2001@cluster0.tlsbsly.mongodb.net/test");
+            settings.ServerApi = new ServerApi(ServerApiVersion.V1);
+            var client = new MongoClient(settings);
+            this.database = client.GetDatabase("SIMS");
+        }
+        public void GetCollection()
+        {
+            this.collection = database.GetCollection<ETag>("ETags");
+        }
         public List<ETag> GetAll()
         {
             return collection.Find(item => true).ToList();

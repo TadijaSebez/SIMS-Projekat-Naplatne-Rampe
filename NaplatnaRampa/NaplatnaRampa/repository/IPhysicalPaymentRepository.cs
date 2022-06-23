@@ -6,12 +6,8 @@ using System.Text;
 
 namespace NaplatnaRampa.repository
 {
-    interface IPhysicalPaymentRepository
+    interface IPhysicalPaymentRepository : IRepository<PhysicalPayment>
     {
-        List<PhysicalPayment> GetAll();
-        PhysicalPayment GetById(ObjectId id);
-        void Insert(PhysicalPayment payment);
-        void Delete(ObjectId id);
-        void Update(PhysicalPayment payment);
+       
     }
 }
