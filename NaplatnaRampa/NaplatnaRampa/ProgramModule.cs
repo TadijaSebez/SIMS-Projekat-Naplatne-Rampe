@@ -24,6 +24,10 @@ namespace NaplatnaRampa
             builder.RegisterType<ElectronicPaymentRepository>().As<IElectronicPaymentRepository>();
             builder.RegisterType<DriverRepository>().As<IDriverRepository>();
             builder.RegisterType<AddressRepository>().As<IAddressRepository>();
+            builder.RegisterType<ScheduleRepository>().As<IScheduleRepository>();
+            builder.RegisterType<TollStationRepository>().As<ITollStationRepository>();
+            builder.RegisterType<PricelistRepository>().As<IPricelistRepository>();
+            builder.RegisterType<PricelistItemRepository>().As<IPricelistItemRepository>();
 
             builder.RegisterType<UserService>().AsSelf();
         }
