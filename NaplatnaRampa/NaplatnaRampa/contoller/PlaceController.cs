@@ -5,22 +5,23 @@ using NaplatnaRampa.model;
 using NaplatnaRampa.contoller;
 using MongoDB.Bson;
 using Autofac;
+using NaplatnaRampa.repository;
 
 namespace NaplatnaRampa.contoller 
 
 {
     public class PlaceController
     {
-        public PlaceController placeController;
+        public IPlaceRepository placeRepository;
 
         public PlaceController()
         {
-            this.placeController = Globals.container.Resolve<PlaceController>();
+            this.placeRepository = Globals.container.Resolve<IPlaceRepository>();
         }
 
         public Place GetById(ObjectId id)
         {
-            return placeController.GetById(id);
+            return placeRepository.GetById(id);
         }
     }
 }

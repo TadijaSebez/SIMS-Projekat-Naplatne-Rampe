@@ -18,7 +18,7 @@ namespace NaplatnaRampa.view
         readonly public PlaceController placeController;
         public TableUsers()
         {
-
+            InitializeComponent();
             userController = Globals.container.Resolve<UserController>();
             addressController = Globals.container.Resolve<AddressController>();
             placeController = Globals.container.Resolve<PlaceController>();
