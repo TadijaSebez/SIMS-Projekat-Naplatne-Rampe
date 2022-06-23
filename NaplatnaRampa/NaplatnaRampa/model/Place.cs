@@ -8,7 +8,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace NaplatnaRampa.model
 {
-    internal class Place
+    public class Place
     {
         public ObjectId _id { get; set; }
         [BsonElement("ptt")]

@@ -10,19 +10,19 @@ namespace NaplatnaRampa.view
 {
     public class LoginFunction
     {
-        public UserService userService;
+        public UserController userController;
         IMongoDatabase database;
 
 
         public LoginFunction(IMongoDatabase db)
         {
-            this.userService = Globals.container.Resolve<UserService>();
+            this.userController = Globals.container.Resolve<UserController>();
             this.database = db;
         }
 
         public bool Validate(String email, string password) {
 
-            User loggedUser = userService.CheckCredentials(email, password);
+            User loggedUser = userController.CheckCredentials(email, password);
 
             if (loggedUser != null)
             {

@@ -25,7 +25,9 @@ namespace NaplatnaRampa
             builder.RegisterType<DriverRepository>().As<IDriverRepository>();
             builder.RegisterType<AddressRepository>().As<IAddressRepository>();
 
-            builder.RegisterType<UserService>().AsSelf();
+            builder.RegisterType<UserController>().AsSelf();
+            builder.RegisterType<AddressController>().AsSelf();
+            builder.RegisterType<PlaceController>().AsSelf();
         }
         }
 }
