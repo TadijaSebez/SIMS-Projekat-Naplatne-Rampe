@@ -8,7 +8,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace NaplatnaRampa.model
 {
-    class Address
+    public class Address
     {
         public ObjectId _id { get; set; }
         [BsonElement("street")]

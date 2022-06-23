@@ -6,7 +6,7 @@ using System.Text;
 
 namespace NaplatnaRampa.repository
 {
-    interface IAddressRepository : IRepository<Address>
+    public interface IAddressRepository : IRepository<Address>
     {
        
     }

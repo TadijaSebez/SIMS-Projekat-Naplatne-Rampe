@@ -8,11 +8,11 @@ using NaplatnaRampa.repository;
 namespace NaplatnaRampa.contoller
 {
 
-    public class UserService
+    public class UserController
     {
         public IUserRepository userRepository;
 
-        public UserService()
+        public UserController()
         {
             this.userRepository = Globals.container.Resolve<IUserRepository>();
         }
@@ -20,6 +20,12 @@ namespace NaplatnaRampa.contoller
         {
             return userRepository.CheckCredentials(email, password);
         }
+
+
+        public List<User> Users()
+        {
+            return userRepository.GetAll();
+        } 
 
     }
 }
