@@ -61,5 +61,6 @@ namespace NaplatnaRampa.view
         #endregion
 
         private System.Windows.Forms.DataGridView usersGridView;
+     
     }
 }
