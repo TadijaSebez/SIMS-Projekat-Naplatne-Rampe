@@ -30,5 +30,20 @@ namespace NaplatnaRampa.contoller
         {
             return tollStationRepository.GetByName(name);
         }
+
+        public void Delete(ObjectId id)
+        {
+
+            tollStationRepository.Delete(id);
+
+        }
+
+
+        public TollStation GetRandom(Random rng)
+        {
+            List<TollStation> allStations = TollStations();
+            return allStations[rng.Next(allStations.Count)];
+        }
     }
+
 }
