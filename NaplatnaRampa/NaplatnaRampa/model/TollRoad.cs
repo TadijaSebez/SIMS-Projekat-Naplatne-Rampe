@@ -13,12 +13,15 @@ namespace NaplatnaRampa.model
         public int number { get; set; }
         [BsonElement("tollStationId")]
         public ObjectId tollStationId{ get; set; }
-       
+        [BsonElement("active")]
+        public bool active { get; set; }
         public TollRoad(int number, ObjectId tollStationId)
         {
             this._id = ObjectId.GenerateNewId();
             this.number = number;
             this.tollStationId = tollStationId;
+
+            this.active = true; 
         }
     }
 }

@@ -20,18 +20,26 @@ namespace NaplatnaRampa.application
         {
             Globals.Load();
 
-            Thread backgroundThread = new Thread(DetectionSimulation);
-            backgroundThread.IsBackground = true;
-            backgroundThread.Start();
 
-            Application.Run(new Login(Globals.database));
+           // Application.Run(new Login(Globals.database));
+
+           // Thread backgroundThread = new Thread(DetectionSimulation);
+           // backgroundThread.IsBackground = true;
+           // backgroundThread.Start();
+
+           // Application.Run(new Login(Globals.database));
+
             //Application.Run(new TableUsers());
             //Application.Run(new TablePricelists());
-            //IPricelistRepository repo = Globals.container.Resolve<IPricelistRepository>();
+          //  IPricelistRepository repo = Globals.container.Resolve<IPricelistRepository>();
             //Application.Run(new TablePricelistItems(repo.GetAll()[1]));
+
+             Application.Run(new TollStationTable());
+       }
+
             //Application.Run(new AddNewUser());
         }
-
+    /*
         private static void DetectionSimulation()
         {
             Random rng = new Random();
@@ -47,5 +55,8 @@ namespace NaplatnaRampa.application
                 }
             }
         }
+
     }
+    */
+    
 }

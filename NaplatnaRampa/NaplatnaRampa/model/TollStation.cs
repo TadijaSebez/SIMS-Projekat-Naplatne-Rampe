@@ -10,7 +10,7 @@ namespace NaplatnaRampa.model
     {
         public ObjectId _id { get; set; }
         [BsonElement("name")]
-        public string name { get; set; }
+        public String name { get; set; }
         [BsonElement("placeId")]
         public ObjectId placeId { get; set; }
         [BsonElement("tollRoadIds")]
