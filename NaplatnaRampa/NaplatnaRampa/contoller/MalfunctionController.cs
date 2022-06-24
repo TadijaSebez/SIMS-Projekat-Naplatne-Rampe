@@ -49,7 +49,7 @@ namespace NaplatnaRampa.contoller
             TimeSpan deltaTime = new TimeSpan(hours, minutes, seconds);
             DateTime endDateTime = beginDateTime + deltaTime;
 
-            string description = "[" + beginDateTime.ToString() + "]: " + "Sistem je detektovao kvar na uredjaju "
+            string description = "Sistem je detektovao kvar na uredjaju "
                 + name + " na naplatnoj stanici " + tollStation.name + ".";
 
             Malfunction malfunction = new Malfunction(tollStation._id, name, description, beginDateTime, false, endDateTime);
