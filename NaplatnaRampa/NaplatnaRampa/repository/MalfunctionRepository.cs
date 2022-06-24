@@ -1,18 +1,17 @@
-﻿using MongoDB.Bson;
-using MongoDB.Driver;
-using NaplatnaRampa.model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using MongoDB.Bson;
+using MongoDB.Driver;
+using NaplatnaRampa.model;
 namespace NaplatnaRampa.repository
 {
-    public class PlaceRepository: IPlaceRepository
+    public class MalfunctionRepository : IMalfunctionRepository
     {
-        public IMongoCollection<Place> collection;
+        public IMongoCollection<Malfunction> collection;
 
         public IMongoDatabase database;
-        public PlaceRepository()
+        public MalfunctionRepository()
         {
             GetDatabase();
             GetCollection();
@@ -27,27 +26,21 @@ namespace NaplatnaRampa.repository
         }
         public void GetCollection()
         {
-            this.collection = database.GetCollection<Place>("Places");
+            this.collection = database.GetCollection<Malfunction>("Malfunctions");
         }
-        public Place GetByName(string name)
-        {
-            return collection.Find(item => item.name == name).FirstOrDefault();
-        }
-
-
-        public List<Place> GetAll()
+        public List<Malfunction> GetAll()
         {
             return collection.Find(item => true).ToList();
         }
 
-        public Place GetById(ObjectId id)
+        public Malfunction GetById(ObjectId id)
         {
             return collection.Find(item => item._id == id).FirstOrDefault();
         }
 
-        public void Insert(Place place)
+        public void Insert(Malfunction malfunction)
         {
-            collection.InsertOne(place);
+            collection.InsertOne(malfunction);
         }
 
         public void Delete(ObjectId id)
@@ -55,9 +48,9 @@ namespace NaplatnaRampa.repository
             collection.DeleteOne(item => item._id == id);
         }
 
-        public void Update(Place place)
+        public void Update(Malfunction malfunction)
         {
-            collection.ReplaceOne(item => item._id == place._id, place);
+            collection.ReplaceOne(item => item._id == malfunction._id, malfunction);
 
         }
     }

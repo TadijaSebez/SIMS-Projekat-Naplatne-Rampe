@@ -34,11 +34,12 @@ namespace NaplatnaRampa.view
             userTable.Columns.Add("Email");
             userTable.Columns.Add("Adresa");
             userTable.Columns.Add("Mesto");
+            userTable.Columns.Add("Uloga");
             foreach (User user in userController.Users())
             {
                 Address address = addressController.GetById(user.addressId);
                 Place place = placeController.GetById(address.placeId);
-                userTable.Rows.Add(user.name, user.surname, user.email, address.street + " " + address.number, place.name);
+                userTable.Rows.Add(user.name, user.surname, user.email, address.street + " " + address.number, place.name, userController.getRoleString(user.role));
             }
             usersGridView.DataSource = userTable;
         }
@@ -48,7 +49,10 @@ namespace NaplatnaRampa.view
            
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
 
