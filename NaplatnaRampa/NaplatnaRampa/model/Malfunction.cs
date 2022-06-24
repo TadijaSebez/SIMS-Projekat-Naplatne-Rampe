@@ -9,26 +9,33 @@ namespace NaplatnaRampa.model
     public class Malfunction
     {
         public ObjectId _id { get; set; }
+        [BsonElement("tollStationId")]
+        public ObjectId tollStationId { get; set; }
+
         [BsonElement("name")]
         public String name { get; set; }
         [BsonElement("description")]
         public String description { get; set; }
 
-        [BsonElement("dateTime")]
-        public DateTime dateTime { get; set; }
+        [BsonElement("dateTimeBegin")]
+        public DateTime dateTimeBegin { get; set; }
 
 
 
         [BsonElement("fixing")]
         public Boolean fixing { get; set; }
 
+        [BsonElement("dateTimeEnd")]
+        public DateTime dateTimeEnd { get; set; }
 
-        public Malfunction(String name, String description, DateTime dateTime, Boolean fixing)
+        public Malfunction(ObjectId tollStationId, String name, String description, DateTime dateTimeBegin, Boolean fixing, DateTime dateTimeEnd)
         {
+            this.tollStationId = tollStationId;
             this.name = name;
             this.description = description;
-            this.dateTime = dateTime;
+            this.dateTimeBegin = dateTimeBegin;
             this.fixing = fixing;
+            this.dateTimeEnd = dateTimeEnd;
         }
        
 
