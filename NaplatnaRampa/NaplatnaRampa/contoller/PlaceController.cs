@@ -23,5 +23,24 @@ namespace NaplatnaRampa.contoller
         {
             return placeRepository.GetById(id);
         }
+
+        public bool CheckPlaceExist(String namePlace)
+        {
+            foreach(Place place in placeRepository.GetAll())
+            {
+                if (place.name.Equals(namePlace))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public Place GetByName(string name)
+        {
+            return placeRepository.GetByName(name);
+        }
+
+
     }
 }

@@ -21,5 +21,11 @@ namespace NaplatnaRampa.contoller
         {
             return addressRepository.GetById(id);
         }
+
+        public void Save(Address address)
+        {
+            addressRepository.Insert(address);
+        }
+
     }
 }

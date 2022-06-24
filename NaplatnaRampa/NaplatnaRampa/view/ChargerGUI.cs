@@ -51,11 +51,7 @@ namespace NaplatnaRampa.view
             InitializeComponent();
         }
 
-        private void ChargerGUI_Load(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void button1_Click(object sender, EventArgs e)
         {
             this.vehicleType = Vehicle.VehicleType.MOTORCYCLE;
@@ -193,17 +189,6 @@ namespace NaplatnaRampa.view
             priceTextBox.Text = pricelistItem.price.ToString();
             this.calculatedPrice = true;
         }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void slipTimeTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button6_Click(object sender, EventArgs e)
         {
             if (!calculatedPrice)
@@ -237,6 +222,21 @@ namespace NaplatnaRampa.view
             {
                 MessageBox.Show("Prekoračenje brzine! " + speed + " km/h", "Upozorenje");
             }
+        }
+
+        private void ChargerGUI_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void slipTollStationTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void slipTollRoadNumberTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

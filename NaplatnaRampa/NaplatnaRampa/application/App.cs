@@ -18,11 +18,12 @@ namespace NaplatnaRampa.application
         {
             Globals.Load();
 
-            Application.Run(new Login(Globals.database));
+            // Application.Run(new Login(Globals.database));
             //Application.Run(new TableUsers());
             //Application.Run(new TablePricelists());
             //IPricelistRepository repo = Globals.container.Resolve<IPricelistRepository>();
             //Application.Run(new TablePricelistItems(repo.GetAll()[1]));
+            Application.Run(new AddNewUser());
         }
     }
 }

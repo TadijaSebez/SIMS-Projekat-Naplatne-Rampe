@@ -8,6 +8,6 @@ namespace NaplatnaRampa.repository
 {
     public interface IPlaceRepository : IRepository<Place>
     {
-      
+        Place GetByName(string name);
     }
 }
