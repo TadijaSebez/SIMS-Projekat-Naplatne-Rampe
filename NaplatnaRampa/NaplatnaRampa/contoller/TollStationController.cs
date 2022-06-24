@@ -30,5 +30,11 @@ namespace NaplatnaRampa.contoller
         {
             return tollStationRepository.GetByName(name);
         }
+
+        public TollStation GetRandom(Random rng)
+        {
+            List<TollStation> allStations = TollStations();
+            return allStations[rng.Next(allStations.Count)];
+        }
     }
 }
