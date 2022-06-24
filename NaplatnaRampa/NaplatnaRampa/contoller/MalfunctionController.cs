@@ -21,5 +21,10 @@ namespace NaplatnaRampa.contoller
         {
             return malfunctionRepository.GetById(id);
         }
+
+        public List<Malfunction> Malfunctions()
+        {
+            return malfunctionRepository.GetAll();
+        }
     }
 }

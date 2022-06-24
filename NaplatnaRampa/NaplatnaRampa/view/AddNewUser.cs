@@ -156,6 +156,7 @@ namespace NaplatnaRampa.view
             userController.Save(newUser);
             MessageBox.Show("Uspešno ste dodali korisnika", "Obaveštenje");
 
+
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -164,6 +165,11 @@ namespace NaplatnaRampa.view
         }
 
         private void streetTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddNewUser_Load(object sender, EventArgs e)
         {
 
         }

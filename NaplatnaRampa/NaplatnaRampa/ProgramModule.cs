@@ -27,6 +27,7 @@ namespace NaplatnaRampa
             builder.RegisterType<ScheduleRepository>().As<IScheduleRepository>();
             builder.RegisterType<TollStationRepository>().As<ITollStationRepository>();
             builder.RegisterType<PricelistRepository>().As<IPricelistRepository>();
+            builder.RegisterType<MalfunctionRepository>().As<IMalfunctionRepository>();
             builder.RegisterType<PricelistItemRepository>().As<IPricelistItemRepository>();
 
             builder.RegisterType<UserController>().AsSelf();
@@ -40,6 +41,7 @@ namespace NaplatnaRampa
             builder.RegisterType<SlipController>().AsSelf();
             builder.RegisterType<PhysicalPaymentController>().AsSelf();
             builder.RegisterType<DriverController>().AsSelf();
+            builder.RegisterType<MalfunctionController>().AsSelf();
         }
     }
 }
