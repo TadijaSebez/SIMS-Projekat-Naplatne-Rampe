@@ -27,6 +27,7 @@ namespace NaplatnaRampa
             builder.RegisterType<ScheduleRepository>().As<IScheduleRepository>();
             builder.RegisterType<TollStationRepository>().As<ITollStationRepository>();
             builder.RegisterType<PricelistRepository>().As<IPricelistRepository>();
+            builder.RegisterType<MalfunctionRepository>().As<IMalfunctionRepository>();
             builder.RegisterType<PricelistItemRepository>().As<IPricelistItemRepository>();
             builder.RegisterType<MalfunctionRepository>().As<IMalfunctionRepository>();
             

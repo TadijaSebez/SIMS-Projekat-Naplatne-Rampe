@@ -33,9 +33,12 @@ namespace NaplatnaRampa.application
             //Application.Run(new TablePricelists());
           //  IPricelistRepository repo = Globals.container.Resolve<IPricelistRepository>();
             //Application.Run(new TablePricelistItems(repo.GetAll()[1]));
+            //Application.Run(new TableUsers());
+            //Application.Run(new MalfunctionTable());
 
-             Application.Run(new TollStationTable());
-       }
+
+             //Application.Run(new TollStationTable());
+       
 
             //Application.Run(new AddNewUser());
         }
@@ -54,6 +57,7 @@ namespace NaplatnaRampa.application
                     malfunctionController.SimulateDetection(rng);
                 }
             }
+
         }
 
     }

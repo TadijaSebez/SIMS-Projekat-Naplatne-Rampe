@@ -41,6 +41,19 @@ namespace NaplatnaRampa.contoller
             return placeRepository.GetByName(name);
         }
 
+        public Place GetPlaceByName(String name)
+        {
+            foreach (Place place in placeRepository.GetAll())
+            {
+                if (place.name.Equals(name))
+                {
+                    return place;
+                }
+            }
+            return null;
+
+        }
+
 
     }
 }

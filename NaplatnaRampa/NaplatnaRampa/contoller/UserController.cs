@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Mail;
 using System.Text;
 using Autofac;
+using MongoDB.Bson;
 using NaplatnaRampa.model;
 using NaplatnaRampa.repository;
 
@@ -26,18 +27,26 @@ namespace NaplatnaRampa.contoller
         public List<User> Users()
         {
             return userRepository.GetAll();
-        } 
+        }
 
 
-        public string  getRoleString(Role role)
+        public void Delete(ObjectId id)
         {
-            if(role == Role.ADMIN)
+            userRepository.Delete(id);
+        }
+        public User GetUserById(ObjectId id)
+        {
+            return userRepository.GetById(id);
+        }
+        public string getRoleString(Role role)
+        {
+            if (role == Role.ADMIN)
             {
                 return "Administrator";
-            }else if(role == Role.BOSS){
+            } else if (role == Role.BOSS) {
                 return "Sef stanice";
             }
-            else if(role == Role.MENAGER)
+            else if (role == Role.MENAGER)
             {
                 return "Menadzer";
             }
@@ -47,6 +56,35 @@ namespace NaplatnaRampa.contoller
             }
 
         }
+
+        public User GetUserByEmail(string email)
+        {
+            foreach(User user in userRepository.GetAll())
+            {
+                if (user.email.Equals(email))
+                {
+                    return user;
+                }
+            }
+            return null;
+        }
+
+        public int indexOfRoleComboBox(Role role)
+        {
+            if(role == Role.CHARGEER)
+            {
+                return 2;
+            }else if(role == Role.MENAGER)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+      
+        }
+
 
         public bool IsValidEmail (string emailaddress)
         {
@@ -65,6 +103,11 @@ namespace NaplatnaRampa.contoller
         public void Save(User user)
         {
             userRepository.Insert(user);
+        }
+
+        public void Update(User user)
+        {
+            userRepository.Update(user);
         }
 
 

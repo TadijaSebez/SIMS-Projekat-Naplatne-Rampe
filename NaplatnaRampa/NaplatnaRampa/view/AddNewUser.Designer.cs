@@ -284,6 +284,7 @@ namespace NaplatnaRampa.view
             this.Controls.Add(this.label1);
             this.Name = "AddNewUser";
             this.Text = "AddNewUser";
+            this.Load += new System.EventHandler(this.AddNewUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

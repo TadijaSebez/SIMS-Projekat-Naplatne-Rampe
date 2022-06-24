@@ -24,6 +24,11 @@ namespace NaplatnaRampa.contoller
             return malfunctionRepository.GetById(id);
         }
 
+
+        public List<Malfunction> Malfunctions()
+        {
+            return malfunctionRepository.GetAll();
+
         public void Save(Malfunction malfunction)
         {
             malfunctionRepository.Insert(malfunction);
@@ -54,6 +59,7 @@ namespace NaplatnaRampa.contoller
 
             Malfunction malfunction = new Malfunction(tollStation._id, name, description, beginDateTime, false, endDateTime);
             malfunctionRepository.Insert(malfunction);
+
         }
     }
 }
