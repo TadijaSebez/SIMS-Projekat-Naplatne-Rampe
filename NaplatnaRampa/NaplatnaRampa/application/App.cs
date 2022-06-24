@@ -21,25 +21,26 @@ namespace NaplatnaRampa.application
             Globals.Load();
 
 
-           // Application.Run(new Login(Globals.database));
+            // Application.Run(new Login(Globals.database));
 
-           // Thread backgroundThread = new Thread(DetectionSimulation);
-           // backgroundThread.IsBackground = true;
-           // backgroundThread.Start();
+            // Thread backgroundThread = new Thread(DetectionSimulation);
+            // backgroundThread.IsBackground = true;
+            // backgroundThread.Start();
 
-           // Application.Run(new Login(Globals.database));
+            // Application.Run(new Login(Globals.database));
 
             //Application.Run(new TableUsers());
             //Application.Run(new TablePricelists());
-          //  IPricelistRepository repo = Globals.container.Resolve<IPricelistRepository>();
+            //  IPricelistRepository repo = Globals.container.Resolve<IPricelistRepository>();
             //Application.Run(new TablePricelistItems(repo.GetAll()[1]));
             //Application.Run(new TableUsers());
             //Application.Run(new MalfunctionTable());
 
 
-             //Application.Run(new TollStationTable());
-       
+            //Application.Run(new TollStationTable());
+            Application.Run(new TollStationReport());
 
+        }
             //Application.Run(new AddNewUser());
         }
     /*
