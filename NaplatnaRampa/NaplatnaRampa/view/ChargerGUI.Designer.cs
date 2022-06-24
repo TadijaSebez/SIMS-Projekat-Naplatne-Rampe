@@ -93,6 +93,7 @@
             this.slipTollStationTextBox.Name = "slipTollStationTextBox";
             this.slipTollStationTextBox.Size = new System.Drawing.Size(125, 27);
             this.slipTollStationTextBox.TabIndex = 3;
+            this.slipTollStationTextBox.TextChanged += new System.EventHandler(this.slipTollStationTextBox_TextChanged);
             // 
             // slipTimeTextBox
             // 
@@ -100,7 +101,6 @@
             this.slipTimeTextBox.Name = "slipTimeTextBox";
             this.slipTimeTextBox.Size = new System.Drawing.Size(125, 27);
             this.slipTimeTextBox.TabIndex = 4;
-            this.slipTimeTextBox.TextChanged += new System.EventHandler(this.slipTimeTextBox_TextChanged);
             // 
             // label1
             // 
@@ -250,7 +250,6 @@
             this.label8.Size = new System.Drawing.Size(120, 20);
             this.label8.TabIndex = 21;
             this.label8.Text = "Naplatna stanica";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -292,6 +291,7 @@
             this.slipTollRoadNumberTextBox.Name = "slipTollRoadNumberTextBox";
             this.slipTollRoadNumberTextBox.Size = new System.Drawing.Size(125, 27);
             this.slipTollRoadNumberTextBox.TabIndex = 26;
+            this.slipTollRoadNumberTextBox.TextChanged += new System.EventHandler(this.slipTollRoadNumberTextBox_TextChanged);
             // 
             // ChargerGUI
             // 
