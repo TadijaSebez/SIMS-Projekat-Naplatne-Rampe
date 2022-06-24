@@ -14,17 +14,19 @@ namespace NaplatnaRampa.view
     {
         public MalfunctionController malfunctionController;
         public TollStationController tollStationController;
-        public MalfunctionTable()
+        public TollStation tollStationSelected;
+        public MalfunctionTable(TollStation tollStation)
         {
             InitializeComponent();
             malfunctionController = Globals.container.Resolve<MalfunctionController>();
             tollStationController = Globals.container.Resolve<TollStationController>();
+            this.tollStationSelected = tollStation;
+            label2.Text = tollStation.name;
         }
 
         private void ManufactionTable_Load(object sender, EventArgs e)
         {
             DataTable malfunctionTable = new DataTable();
-            malfunctionTable.Columns.Add("Naplatna stanica");
             malfunctionTable.Columns.Add("Uredjaj");
             malfunctionTable.Columns.Add("Opis");
             malfunctionTable.Columns.Add("Datum nastanka kvara");
@@ -33,13 +35,22 @@ namespace NaplatnaRampa.view
             foreach (Malfunction malfunction in malfunctionController.Malfunctions())
             {
                 TollStation tollStation = tollStationController.GetById(malfunction.tollStationId);
-                malfunctionTable.Rows.Add(tollStation.name, malfunction.name, malfunction.description, malfunction.dateTimeBegin, malfunction.fixing, malfunction.dateTimeEnd);
+                if (tollStation.name.Equals(tollStationSelected.name))
+                {
+                    malfunctionTable.Rows.Add( malfunction.name, malfunction.description, malfunction.dateTimeBegin, malfunction.fixing, malfunction.dateTimeEnd);
+                }
+                
             }
             malfunctionGridView.DataSource = malfunctionTable;
 
         }
 
         private void malfunctionGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
