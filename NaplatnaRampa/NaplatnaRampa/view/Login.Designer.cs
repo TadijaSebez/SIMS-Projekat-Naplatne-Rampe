@@ -40,6 +40,7 @@ namespace NaplatnaRampa.view
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Sienna;
             this.label1.Location = new System.Drawing.Point(86, 94);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -65,6 +66,7 @@ namespace NaplatnaRampa.view
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Sienna;
             this.label2.Location = new System.Drawing.Point(67, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 28);
@@ -73,7 +75,8 @@ namespace NaplatnaRampa.view
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.button1.BackColor = System.Drawing.Color.SandyBrown;
+            this.button1.ForeColor = System.Drawing.Color.SaddleBrown;
             this.button1.Location = new System.Drawing.Point(279, 238);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 43);
@@ -95,7 +98,7 @@ namespace NaplatnaRampa.view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(472, 323);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.button1);

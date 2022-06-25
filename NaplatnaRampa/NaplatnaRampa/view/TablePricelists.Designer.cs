@@ -38,7 +38,6 @@ namespace NaplatnaRampa.view
             // 
             this.gridView.AllowUserToAddRows = false;
             this.gridView.AllowUserToDeleteRows = false;
-            this.gridView.AllowUserToOrderColumns = false;
             this.gridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridView.Location = new System.Drawing.Point(75, 57);
             this.gridView.Name = "gridView";
@@ -62,6 +61,7 @@ namespace NaplatnaRampa.view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.gridView);
