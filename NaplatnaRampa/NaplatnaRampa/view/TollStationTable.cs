@@ -16,17 +16,19 @@ namespace NaplatnaRampa.view
 
         readonly public TollStationController tollStationController;
         readonly public PlaceController placeController;
+        public DataTable tollStationTable;
         public TollStationTable()
         {
             InitializeComponent();
             tollStationController = Globals.container.Resolve<TollStationController>();
             placeController = Globals.container.Resolve<PlaceController>();
+            this.tollStationTable = new DataTable();
         }
 
 
         private void TollStationCRUD_Load(object sender, EventArgs e)
         {
-            DataTable tollStationTable = new DataTable();
+            
             tollStationTable.Columns.Add("NAZIV");
             tollStationTable.Columns.Add("MJESTO");
             foreach (TollStation ts in tollStationController.TollStations())
@@ -52,6 +54,19 @@ namespace NaplatnaRampa.view
         {
             TollStationCreateForm t = new TollStationCreateForm();
             t.Show();
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            tollStationTable.Clear();
+            foreach (TollStation ts in tollStationController.TollStations())
+            {
+                Place place = placeController.GetById(ts.placeId);
+                tollStationTable.Rows.Add(ts.name, place.name);
+
+            }
+            dataGridView1.DataSource = tollStationTable;
 
         }
 

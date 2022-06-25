@@ -46,6 +46,12 @@ namespace NaplatnaRampa.contoller
         }
 
 
+        public void Insert(TollStation tollStation) {
+            tollStationRepository.Insert(tollStation);
+        
+        }
+
+
         public void Update(TollStation tollStation) {
 
             tollStationRepository.Update(tollStation);
