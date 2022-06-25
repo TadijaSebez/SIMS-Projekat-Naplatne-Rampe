@@ -56,7 +56,7 @@ namespace NaplatnaRampa.view
         }
 
         /*
-        private void button2_Click(object sender, EventArgs e)         // delete
+        private void button2_Click(object sender, EventArgs e)         // delete OVO JE ZA KIKUUU !!!!
         {
             int rowindex = dataGridView1.CurrentRow.Index;
             string selectedTollStationName = (string)dataGridView1.Rows[rowindex].Cells[0].Value;
