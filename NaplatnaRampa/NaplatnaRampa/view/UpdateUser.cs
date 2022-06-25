@@ -19,10 +19,10 @@ namespace NaplatnaRampa.view
         public PlaceController placeController;
         public AddressController addressController;
         public User selectedUser { get; set; }
-        public UpdateUser(User user)
+        public UpdateUser(User selectedUser)
         {
+            this.selectedUser = selectedUser;
             InitializeComponent();
-            selectedUser = user;
             userController = Globals.container.Resolve<UserController>();
             placeController = Globals.container.Resolve<PlaceController>();
             addressController = Globals.container.Resolve<AddressController>();
@@ -35,9 +35,9 @@ namespace NaplatnaRampa.view
             textBox6.Text = a.street;
             Place p = placeController.GetById(a.placeId);
             textBox7.Text = p.name;
-            textBox8.Text = user.phone;
+            textBox8.Text = selectedUser.phone;
             textBox10.Text = a.number.ToString();
-            comboBox1.SelectedIndex = userController.indexOfRoleComboBox(user.role);
+            comboBox1.SelectedIndex = userController.indexOfRoleComboBox(selectedUser.role);
 
         }
 
@@ -143,6 +143,7 @@ namespace NaplatnaRampa.view
             Place placeN = placeController.GetPlaceByName(place);
             address.placeId = placeN._id;
             selectedUser.addressId = address._id;
+            addressController.Update(address);
             userController.Update(selectedUser);
             MessageBox.Show("Uspešno ste izmenili korisnika!", "Obaveštenje");
             return;

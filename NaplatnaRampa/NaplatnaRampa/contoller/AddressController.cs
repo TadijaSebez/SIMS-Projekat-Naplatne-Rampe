@@ -27,5 +27,8 @@ namespace NaplatnaRampa.contoller
             addressRepository.Insert(address);
         }
 
+        public void Update(Address address) {
+            addressRepository.Update(address);
+        }
     }
 }

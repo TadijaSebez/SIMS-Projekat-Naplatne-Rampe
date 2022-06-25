@@ -27,7 +27,32 @@ namespace NaplatnaRampa.application
             //Application.Run(new TablePricelistItems(repo.GetAll()[1]));
 
 
-            Application.Run(new TollStationTable());
+            //Application.Run(new TollStationTable());
+            //Application.Run(new TollStationReport());
+            Application.Run(new IncomeReport());
+
         }
+            //Application.Run(new AddNewUser());
+        }
+    /*
+        private static void DetectionSimulation()
+        {
+            Random rng = new Random();
+            
+            MalfunctionController malfunctionController = Globals.container.Resolve<MalfunctionController>();
+            
+            while (true)
+            {
+                Thread.Sleep(10 * 1000);
+                if (rng.Next(5) == 0) // Chances for failure are 20%
+                {
+                    malfunctionController.SimulateDetection(rng);
+                }
+            }
+
+            Application.Run(new TollStationTable());
+
+        }
+        /*
     }
 }
