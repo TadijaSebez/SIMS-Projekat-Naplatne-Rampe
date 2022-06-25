@@ -59,32 +59,38 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.LightSalmon;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(32, 25);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(143, 85);
             this.button1.TabIndex = 0;
             this.button1.Text = "Motor";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.LightSalmon;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.Location = new System.Drawing.Point(196, 25);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(143, 85);
             this.button2.TabIndex = 1;
             this.button2.Text = "Putničko vozilo";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.LightSalmon;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.Location = new System.Drawing.Point(357, 25);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(143, 85);
             this.button3.TabIndex = 2;
             this.button3.Text = "Kamion";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // slipTollStationTextBox
@@ -138,26 +144,31 @@
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.PeachPuff;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button4.Location = new System.Drawing.Point(393, 148);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(94, 58);
             this.button4.TabIndex = 9;
             this.button4.Text = "RSD";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
+            this.button5.BackColor = System.Drawing.Color.PeachPuff;
+            this.button5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button5.Location = new System.Drawing.Point(509, 147);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(94, 59);
             this.button5.TabIndex = 10;
             this.button5.Text = "EUR";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // priceTextBox
             // 
+            this.priceTextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.priceTextBox.Location = new System.Drawing.Point(466, 258);
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.ReadOnly = true;
@@ -182,6 +193,7 @@
             // 
             // changeTextBox
             // 
+            this.changeTextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.changeTextBox.Location = new System.Drawing.Point(466, 353);
             this.changeTextBox.Name = "changeTextBox";
             this.changeTextBox.ReadOnly = true;
@@ -209,30 +221,33 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(165, 148);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(160, 130);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 20);
+            this.label7.Size = new System.Drawing.Size(73, 38);
             this.label7.TabIndex = 17;
-            this.label7.Text = "Slip";
+            this.label7.Text = "SLIP";
             // 
             // button6
             // 
+            this.button6.BackColor = System.Drawing.Color.LightSalmon;
             this.button6.Location = new System.Drawing.Point(633, 400);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(155, 38);
             this.button6.TabIndex = 18;
             this.button6.Text = "Naplati";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
+            this.button7.BackColor = System.Drawing.Color.PeachPuff;
             this.button7.Location = new System.Drawing.Point(466, 300);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(125, 29);
             this.button7.TabIndex = 19;
             this.button7.Text = "Izračunaj iznos";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // tollStationTextBox
@@ -270,11 +285,12 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.Location = new System.Drawing.Point(607, 14);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 20);
+            this.label10.Size = new System.Drawing.Size(142, 23);
             this.label10.TabIndex = 24;
-            this.label10.Text = "Radno mesto";
+            this.label10.Text = "RADNO MJESTO";
             // 
             // label11
             // 
@@ -297,6 +313,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.slipTollRoadNumberTextBox);
             this.Controls.Add(this.label11);
@@ -325,6 +342,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.ForeColor = System.Drawing.Color.DarkRed;
             this.Name = "ChargerGUI";
             this.Text = "ChargerGUI";
             this.Load += new System.EventHandler(this.ChargerGUI_Load);

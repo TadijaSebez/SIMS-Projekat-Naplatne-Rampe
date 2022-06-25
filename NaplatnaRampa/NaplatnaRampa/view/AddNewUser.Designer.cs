@@ -59,6 +59,7 @@ namespace NaplatnaRampa.view
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Chocolate;
             this.label1.Location = new System.Drawing.Point(85, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 28);
@@ -70,6 +71,7 @@ namespace NaplatnaRampa.view
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.Chocolate;
             this.label2.Location = new System.Drawing.Point(55, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 28);
@@ -80,6 +82,7 @@ namespace NaplatnaRampa.view
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.Chocolate;
             this.label3.Location = new System.Drawing.Point(70, 162);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 28);
@@ -90,6 +93,7 @@ namespace NaplatnaRampa.view
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.Chocolate;
             this.label4.Location = new System.Drawing.Point(51, 210);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 28);
@@ -101,6 +105,7 @@ namespace NaplatnaRampa.view
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.Chocolate;
             this.label5.Location = new System.Drawing.Point(55, 405);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 28);
@@ -111,6 +116,7 @@ namespace NaplatnaRampa.view
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.Chocolate;
             this.label6.Location = new System.Drawing.Point(64, 457);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 28);
@@ -121,6 +127,7 @@ namespace NaplatnaRampa.view
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.Chocolate;
             this.label7.Location = new System.Drawing.Point(74, 298);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 28);
@@ -131,7 +138,8 @@ namespace NaplatnaRampa.view
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(363, 301);
+            this.label8.ForeColor = System.Drawing.Color.Chocolate;
+            this.label8.Location = new System.Drawing.Point(386, 305);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(51, 28);
             this.label8.TabIndex = 7;
@@ -141,6 +149,7 @@ namespace NaplatnaRampa.view
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.Chocolate;
             this.label9.Location = new System.Drawing.Point(62, 352);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 28);
@@ -199,7 +208,7 @@ namespace NaplatnaRampa.view
             // 
             // numberTextBox
             // 
-            this.numberTextBox.Location = new System.Drawing.Point(420, 305);
+            this.numberTextBox.Location = new System.Drawing.Point(445, 305);
             this.numberTextBox.Name = "numberTextBox";
             this.numberTextBox.Size = new System.Drawing.Size(103, 27);
             this.numberTextBox.TabIndex = 16;
@@ -208,27 +217,29 @@ namespace NaplatnaRampa.view
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(377, 44);
+            this.pictureBox1.Location = new System.Drawing.Point(386, 69);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(194, 166);
+            this.pictureBox1.Size = new System.Drawing.Size(176, 180);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(233, 506);
+            this.button1.BackColor = System.Drawing.Color.SandyBrown;
+            this.button1.Location = new System.Drawing.Point(437, 506);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(111, 34);
             this.button1.TabIndex = 21;
             this.button1.Text = "Potvrdi";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.Color.Chocolate;
             this.label10.Location = new System.Drawing.Point(-2, 256);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(145, 25);
@@ -259,6 +270,7 @@ namespace NaplatnaRampa.view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(599, 552);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.checkPasswordTextBox);
