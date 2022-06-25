@@ -37,6 +37,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Add = new System.Windows.Forms.Button();
             this.messageLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,19 +105,30 @@
             this.messageLabel.Size = new System.Drawing.Size(0, 23);
             this.messageLabel.TabIndex = 4;
             // 
-            // TollStationCRUD
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(793, 428);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 77);
+            this.button1.TabIndex = 5;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // TollStationTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(900, 517);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.messageLabel);
             this.Controls.Add(this.Add);
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "TollStationCRUD";
+            this.Name = "TollStationTable";
             this.Text = "NAPLATNA MJESTA";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Load += new System.EventHandler(this.TollStationCRUD_Load);
@@ -132,5 +144,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button Add;
         private System.Windows.Forms.Label messageLabel;
+        private System.Windows.Forms.Button button1;
     }
 }
