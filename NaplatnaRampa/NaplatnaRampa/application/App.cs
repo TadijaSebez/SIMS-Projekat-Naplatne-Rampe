@@ -38,7 +38,8 @@ namespace NaplatnaRampa.application
 
 
             //Application.Run(new TollStationTable());
-            Application.Run(new TollStationReport());
+            //Application.Run(new TollStationReport());
+            Application.Run(new IncomeReport());
 
         }
             //Application.Run(new AddNewUser());
