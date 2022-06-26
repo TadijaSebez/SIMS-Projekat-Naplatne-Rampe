@@ -25,5 +25,32 @@ namespace NaplatnaRampa.contoller
         {
             return tollRoadRepository.GetById(id);
         }
+
+        public void Insert(TollRoad tollRoad) {
+            tollRoadRepository.Insert(tollRoad);
+        
+        }
+
+
+        public TollRoad GetByStationAndNumber(ObjectId tollstaitonId, int number) {
+            foreach (TollRoad t in tollRoadRepository.GetAll())
+            {
+                if (t.tollStationId.Equals(tollstaitonId) && t.number == number)
+                {
+                    return t;
+                }
+
+            }
+
+            return null;
+        }
+
+        public void Update(TollRoad tollroad) {
+            tollRoadRepository.Update(tollroad);
+        
+        }
+        public void Delete(TollRoad t) {
+            tollRoadRepository.Delete(t._id);
+        }
     }
 }

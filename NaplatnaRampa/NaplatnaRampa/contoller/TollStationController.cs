@@ -44,6 +44,12 @@ namespace NaplatnaRampa.contoller
             List<TollStation> allStations = TollStations();
             return allStations[rng.Next(allStations.Count)];
         }
+
+
+        public void Update(TollStation tollStation) {
+
+            tollStationRepository.Update(tollStation);
+        }
     }
 
 }
