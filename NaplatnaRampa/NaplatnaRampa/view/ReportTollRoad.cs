@@ -25,6 +25,7 @@ namespace NaplatnaRampa.view
             InitializeComponent();
             this.tollStation = tollStation;
             this.payments = payments;
+            label2.Text = tollStation.name;
             this.paymentController = Globals.container.Resolve<PaymentController>();
             this.tollRoadController = Globals.container.Resolve<TollRoadController>();
             this.tollStationController = Globals.container.Resolve<TollStationController>();
@@ -32,6 +33,7 @@ namespace NaplatnaRampa.view
 
         private void label1_Click(object sender, EventArgs e)
         {
+         
 
         }
 
@@ -69,7 +71,7 @@ namespace NaplatnaRampa.view
 
         private void label2_Click(object sender, EventArgs e)
         {
-            label2.Text = tollStation.name;
+            
         }
     }
 }
