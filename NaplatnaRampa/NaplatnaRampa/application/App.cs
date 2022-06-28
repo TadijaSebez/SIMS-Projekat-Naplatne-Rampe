@@ -34,6 +34,7 @@ namespace NaplatnaRampa.application
         
             //Application.Run(new AddNewUser());
         }
+
     /*
         private static void DetectionSimulation()
         {
@@ -55,4 +56,4 @@ namespace NaplatnaRampa.application
         }
         */
     }
-}
+   }

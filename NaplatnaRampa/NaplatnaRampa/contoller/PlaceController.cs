@@ -24,6 +24,9 @@ namespace NaplatnaRampa.contoller
             return placeRepository.GetById(id);
         }
 
+        public void Insert(Place p) {
+            placeRepository.Insert(p);
+        }
         public bool CheckPlaceExist(String namePlace)
         {
             foreach(Place place in placeRepository.GetAll())
