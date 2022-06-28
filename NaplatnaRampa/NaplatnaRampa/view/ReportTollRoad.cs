@@ -46,26 +46,39 @@ namespace NaplatnaRampa.view
         {
             DataTable tollStationTable = new DataTable();
             tollStationTable.Columns.Add("Broj naplatnog mesta");
-            tollStationTable.Columns.Add("Prihodi");
-            float totalprice = 0;
+            tollStationTable.Columns.Add("Prihodi u RSD");
+            tollStationTable.Columns.Add("Prihodi u EUR");
+            float totalpriceEur = 0;
+            float totalpriceRsd = 0;
             foreach(ObjectId roadId in tollStation.tollRoadIds)
             {
-                float priceRoad = 0;
+                float priceRoadEur = 0;
+                float priceRoadRsd = 0;
                 TollRoad tollRoad = tollRoadController.GetById(roadId);
                 foreach(Payment payment in payments)
                 {
                     if (payment.tollRoadId.Equals(roadId))
                     {
-                        priceRoad += payment.price;
-                        totalprice += payment.price;
+                        if (payment.currency == Currency.TypeOfCurrency.EUR)
+                        {
+                            priceRoadEur += payment.price;
+                            totalpriceEur += payment.price;
+                        }
+                        else
+                        {
+                            priceRoadRsd += payment.price;
+                            totalpriceRsd += payment.price;
+                        }
+                       
+                        
                     } 
                 }
-                tollStationTable.Rows.Add(tollRoad.number, priceRoad);
+                tollStationTable.Rows.Add(tollRoad.number, priceRoadRsd.ToString(), priceRoadEur.ToString());
 
             }
            
             dataGridView1.DataSource = tollStationTable;
-            label3.Text = totalprice.ToString();
+            label3.Text = totalpriceRsd.ToString() + "RSD  " + totalpriceEur.ToString() + "EUR";
 
         }
 

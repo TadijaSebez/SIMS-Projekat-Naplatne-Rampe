@@ -18,7 +18,7 @@ namespace NaplatnaRampa.application
     {
         public static void Main(string[] args)
         {
-            Globals.Load();
+           
 
             // Application.Run(new Login(Globals.database));
             //Application.Run(new TableUsers());
@@ -27,13 +27,13 @@ namespace NaplatnaRampa.application
             //Application.Run(new TablePricelistItems(repo.GetAll()[1]));
 
 
-            Application.Run(new TollStationTable());
-            //Application.Run(new TollStationReport());
-           // Application.Run(new IncomeReport());
+            //Application.Run(new TollStationTable());
+            Application.Run(new TollStationReport());
+            //Application.Run(new IncomeReport());
 
+        
+            //Application.Run(new AddNewUser());
         }
-        //Application.Run(new AddNewUser());
-    }
 
     /*
         private static void DetectionSimulation()
@@ -56,4 +56,4 @@ namespace NaplatnaRampa.application
         }
         */
     }
-//
+   }
