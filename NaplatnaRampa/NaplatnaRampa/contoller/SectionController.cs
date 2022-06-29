@@ -8,7 +8,7 @@ using System.Text;
 
 namespace NaplatnaRampa.contoller
 {
-    class SectionController
+    public class SectionController
     {
         public ISectionRepository sectionRepository;
         public SectionController()
