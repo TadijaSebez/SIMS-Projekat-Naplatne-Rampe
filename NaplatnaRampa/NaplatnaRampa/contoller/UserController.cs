@@ -12,11 +12,26 @@ namespace NaplatnaRampa.contoller
 
     public class UserController
     {
-        public IUserRepository userRepository;
+        public IUserRepository userRepository; 
+        private List<Action> callbackFunctions;
 
         public UserController()
         {
             this.userRepository = Globals.container.Resolve<IUserRepository>();
+            this.callbackFunctions = new List<Action>();
+        }
+
+        public void AddUpdateCallback(Action function)
+        {
+            callbackFunctions.Add(function);
+        }
+
+        private void Updated()
+        {
+            foreach (Action function in callbackFunctions)
+            {
+                function();
+            }
         }
         public User CheckCredentials(string email, string password)
         {
@@ -33,6 +48,7 @@ namespace NaplatnaRampa.contoller
         public void Delete(ObjectId id)
         {
             userRepository.Delete(id);
+            Updated();
         }
         public User GetUserById(ObjectId id)
         {
@@ -103,11 +119,13 @@ namespace NaplatnaRampa.contoller
         public void Save(User user)
         {
             userRepository.Insert(user);
+            Updated();
         }
 
         public void Update(User user)
         {
             userRepository.Update(user);
+            Updated();
         }
 
 

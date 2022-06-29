@@ -55,6 +55,7 @@ namespace NaplatnaRampa.view
         private void ManufactionTable_Load(object sender, EventArgs e)
         {
             CreateTable();
+            //malfunctionController.AddUpdateCallback(CreateTable);
         }
 
         private void malfunctionGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
