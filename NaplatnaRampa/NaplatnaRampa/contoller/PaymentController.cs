@@ -25,7 +25,7 @@ namespace NaplatnaRampa.contoller
 
         public List<Payment> GetPaymentsSpecified(int number)
         {
-            DateTime added = DateTime.Now.AddDays(number);
+            DateTime added = DateTime.Now.AddDays(-number);
             List<Payment> payments = new List<Payment>();
             foreach(Payment payment in paymentRepository.GetAll())
             {
