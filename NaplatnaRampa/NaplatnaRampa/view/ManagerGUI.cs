@@ -40,15 +40,14 @@ namespace NaplatnaRampa.view
 
         private void button2_Click(object sender, EventArgs e)
         {
-            TollStationReport tollStationReport = new TollStationReport();
-            tollStationReport.Show();
+           
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //izvestaj o prihodima
-            ManagerReportIncome managerReportIncome = new ManagerReportIncome();
-            managerReportIncome.Show();
+
+            IncomeReport incomeReport = new IncomeReport(true);
+            incomeReport.Show();
             
         }
     }

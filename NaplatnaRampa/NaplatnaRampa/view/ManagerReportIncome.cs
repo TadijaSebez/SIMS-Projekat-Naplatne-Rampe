@@ -16,12 +16,14 @@ namespace NaplatnaRampa.view
         public PhysicalPaymentController paymentController;
         public TollRoadController tollRoadController;
         public TollStationController tollStationController;
-        public ManagerReportIncome()
+        public int numberDays;
+        public ManagerReportIncome(int number)
         {
             InitializeComponent();
             this.paymentController = Globals.container.Resolve<PhysicalPaymentController>();
             this.tollRoadController = Globals.container.Resolve<TollRoadController>();
             this.tollStationController = Globals.container.Resolve<TollStationController>();
+            this.numberDays = number;
         }
 
         private void ManagerReportIncome_Load(object sender, EventArgs e)
@@ -38,7 +40,7 @@ namespace NaplatnaRampa.view
                 float priceRsd = 0;
                 foreach (ObjectId objcetId in tollStation.tollRoadIds) 
                 {
-                    List<float> prices = paymentController.GetTotalPricePayments(objcetId);
+                    List<float> prices = paymentController.GetTotalPricePayments(objcetId, numberDays);
                     priceEur += prices[0];
                     totalEur += prices[0];
                     priceRsd += prices[1];
