@@ -40,7 +40,8 @@ namespace NaplatnaRampa.view
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
+            MalfunctionAllReport malfunctionAll = new MalfunctionAllReport();
+            malfunctionAll.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
