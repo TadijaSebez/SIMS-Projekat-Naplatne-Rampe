@@ -42,5 +42,11 @@ namespace NaplatnaRampa.view
             IncomeReport incomeReport = new IncomeReport(false);
             incomeReport.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SelectTollStation tollStation = new SelectTollStation();
+            tollStation.Show();
+        }
     }
 }
