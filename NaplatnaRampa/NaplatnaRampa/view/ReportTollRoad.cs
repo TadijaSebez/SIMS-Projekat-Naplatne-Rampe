@@ -33,6 +33,7 @@ namespace NaplatnaRampa.view
 
         private void label1_Click(object sender, EventArgs e)
         {
+         
 
         }
 
@@ -76,6 +77,7 @@ namespace NaplatnaRampa.view
            
             dataGridView1.DataSource = tollStationTable;
             label3.Text = totalpriceRsd.ToString() + "RSD " + totalpriceEur.ToString() + "EUR";
+
 
         }
 

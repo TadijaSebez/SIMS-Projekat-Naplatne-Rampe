@@ -23,6 +23,6 @@ namespace NaplatnaRampa.contoller
             return paymentRepository.GetById(id);
         }
 
-        
+
     }
 }
