@@ -16,6 +16,7 @@ namespace NaplatnaRampa.view
 
         readonly public TollStationController tollStationController;
         readonly public PlaceController placeController;
+        readonly public SectionController sectionController;
         public DataTable tollStationTable;
         public TollStationTable()
         {
@@ -23,6 +24,7 @@ namespace NaplatnaRampa.view
             tollStationController = Globals.container.Resolve<TollStationController>();
             placeController = Globals.container.Resolve<PlaceController>();
             this.tollStationTable = new DataTable();
+            sectionController = Globals.container.Resolve<SectionController>();
         }
 
 
@@ -80,6 +82,33 @@ namespace NaplatnaRampa.view
 
             }
             dataGridView1.DataSource = tollStationTable;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            bool problem = false;
+            int rowindex = dataGridView1.CurrentRow.Index;
+            string selectedTollStationName = (string)dataGridView1.Rows[rowindex].Cells[0].Value;
+            TollStation tollStation = tollStationController.GetByName(selectedTollStationName);
+            foreach (Section s in sectionController.Sections()) {
+                if (s.firstStationId.Equals(tollStation._id) || s.secondStationId.Equals(tollStation._id))
+                {
+                    problem = true;
+
+                }
+            
+            }
+
+            if (problem)
+            {
+                MessageBox.Show("NAPLATNA STANICA JE DIO DEONICE. NIJE DOZVOLJENO BRISANJE!");
+            }
+            else
+            {
+                tollStationController.Delete(tollStation._id);
+                MessageBox.Show("NAPLATNA STANICA JE USPJESNO OBRISANA!");
+
+            }
         }
 
 
