@@ -28,6 +28,11 @@ namespace NaplatnaRampa.contoller
             callbackFunctions.Add(function);
         }
 
+        public void RemoveUpdateCallback()
+        {
+            callbackFunctions.RemoveAt(callbackFunctions.Count - 1);
+        }
+
         private void Updated()
         {
             foreach (Action function in callbackFunctions)

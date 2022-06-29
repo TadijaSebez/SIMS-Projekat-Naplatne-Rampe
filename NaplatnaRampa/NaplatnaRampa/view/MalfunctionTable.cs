@@ -56,6 +56,10 @@ namespace NaplatnaRampa.view
             malfunctionGridView.DataSource = malfunctionTable;
         }
 
+        private void Form1_Closing(object sender, System.Windows.Forms.FormClosedEventArgs e)
+        {
+            malfunctionController.RemoveUpdateCallback();
+        }
         private void ManufactionTable_Load(object sender, EventArgs e)
         {
             CreateTable();
