@@ -32,6 +32,8 @@ namespace NaplatnaRampa.application
             //Application.Run(new TollStationTable());
             //Application.Run(new TollStationReport());
             //Application.Run(new IncomeReport());
+            //TollStationController tsc = Globals.container.Resolve<TollStationController>();
+            //Application.Run(new MalfunctionTable(tsc.GetByName("Inđija")));
         }
 
     

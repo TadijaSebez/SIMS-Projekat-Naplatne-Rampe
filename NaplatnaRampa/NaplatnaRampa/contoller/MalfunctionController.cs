@@ -11,12 +11,29 @@ namespace NaplatnaRampa.contoller
     public class MalfunctionController
     {
         private IMalfunctionRepository malfunctionRepository;
+        private TollRoadController tollRoadController;
         private TollStationController tollStationController;
+        private List<Action> callbackFunctions;
 
         public MalfunctionController()
         {
             this.malfunctionRepository = Globals.container.Resolve<IMalfunctionRepository>();
+            this.tollRoadController = Globals.container.Resolve<TollRoadController>();
             this.tollStationController = Globals.container.Resolve<TollStationController>();
+            this.callbackFunctions = new List<Action>();
+        }
+
+        public void AddUpdateCallback(Action function)
+        {
+            callbackFunctions.Add(function);
+        }
+
+        private void Updated()
+        {
+            foreach (Action function in callbackFunctions)
+            {
+                function();
+            }
         }
 
         public Malfunction GetById(ObjectId id)
@@ -33,15 +50,22 @@ namespace NaplatnaRampa.contoller
         public void Save(Malfunction malfunction)
         {
             malfunctionRepository.Insert(malfunction);
+            Updated();
         }
 
-        public bool IsInMalfunction(TollStation station)
+        public void Update(Malfunction malfunction)
+        {
+            malfunctionRepository.Update(malfunction);
+            Updated();
+        }
+
+        public bool IsInMalfunction(TollRoad road)
         {
             foreach (Malfunction malfunction in malfunctionRepository.GetAll())
             {
-                if (malfunction.tollStationId == station._id)
+                if (malfunction.tollRoadId == road._id)
                 {
-                    if (malfunction.dateTimeBegin < DateTime.Now && malfunction.dateTimeEnd > DateTime.Now)
+                    if (malfunction.fixing == false)
                         return true;
                 }
             }
@@ -50,7 +74,8 @@ namespace NaplatnaRampa.contoller
 
         public void SimulateDetection(Random rng)
         {
-            TollStation tollStation = tollStationController.GetRandom(rng);
+            TollRoad tollRoad = tollRoadController.GetRandom(rng);
+            TollStation tollStation = tollStationController.GetById(tollRoad.tollStationId);
 
             List<string> possibleNames = new List<string>
             {
@@ -65,15 +90,14 @@ namespace NaplatnaRampa.contoller
             int hours = rng.Next(100);
             int minutes = rng.Next(60);
             int seconds = rng.Next(60);
-            TimeSpan deltaTime = new TimeSpan(hours, minutes, seconds);
-            DateTime endDateTime = beginDateTime + deltaTime;
+            DateTime endDateTime = DateTime.MaxValue;
 
             string description = "Sistem je detektovao kvar na uredjaju "
-                + name + " na naplatnoj stanici " + tollStation.name + ".";
+                + name + " na mestu broj " + tollRoad.number + " na naplatnoj stanici " + tollStation.name + ".";
 
-            Malfunction malfunction = new Malfunction(tollStation._id, name, description, beginDateTime, false, endDateTime);
+            Malfunction malfunction = new Malfunction(tollRoad._id, name, description, beginDateTime, false, endDateTime);
             malfunctionRepository.Insert(malfunction);
-
+            Updated();
         }
     }
 }

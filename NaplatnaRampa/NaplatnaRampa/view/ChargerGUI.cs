@@ -321,6 +321,8 @@ namespace NaplatnaRampa.view
             
             paidAmountTextBox.Enabled = false;
             button6.Enabled = false;
+
+            button9.Visible = false;
         }
 
         private void slipTollStationTextBox_TextChanged(object sender, EventArgs e)
@@ -356,41 +358,66 @@ namespace NaplatnaRampa.view
                 return;
             }
 
-            if (malfunctionController.IsInMalfunction(workTollStation))
+            if (malfunctionController.IsInMalfunction(workTollRoad))
             {
                 stateLabel.Text = "U kvaru";
+
+                malfunctionController.AddUpdateCallback(MalfunctionUpdateCallback);
+                button9.Visible = true;
             }
             else
             {
-                stateLabel.Text = "Rampa je spuštena";
-
-                selectedWorkPlace = true;
-                tollStationTextBox.Enabled = false;
-                tollRoadNumberTextBox.Enabled = false;
-                button8.Enabled = false;
-
-
-                slipTollStationTextBox.Enabled = true;
-                slipTollRoadNumberTextBox.Enabled = true;
-                slipTimeTextBox.Enabled = true;
-                slipTablesTextBox.Enabled = true;
-
-                selectedVehicleType = false;
-                button1.Enabled = true;
-                button1.FlatStyle = FlatStyle.Standard;
-                button2.Enabled = true;
-                button2.FlatStyle = FlatStyle.Standard;
-                button3.Enabled = true;
-                button3.FlatStyle = FlatStyle.Standard;
-
-                selectedCurrency = false;
-                button4.Enabled = true;
-                button4.FlatStyle = FlatStyle.Standard;
-                button5.Enabled = true;
-                button5.FlatStyle = FlatStyle.Standard;
-
-                button7.Enabled = true;
+                EnablePayments();
             }
+        }
+
+        private void MalfunctionUpdateCallback()
+        {
+            if (selectedWorkPlace)
+                return;
+
+            if (!malfunctionController.IsInMalfunction(workTollRoad))
+                EnablePayments();
+        }
+
+        private void EnablePayments()
+        {
+            button9.Visible = false;
+
+            stateLabel.Text = "Rampa je spuštena";
+
+            selectedWorkPlace = true;
+            tollStationTextBox.Enabled = false;
+            tollRoadNumberTextBox.Enabled = false;
+            button8.Enabled = false;
+
+
+            slipTollStationTextBox.Enabled = true;
+            slipTollRoadNumberTextBox.Enabled = true;
+            slipTimeTextBox.Enabled = true;
+            slipTablesTextBox.Enabled = true;
+
+            selectedVehicleType = false;
+            button1.Enabled = true;
+            button1.FlatStyle = FlatStyle.Standard;
+            button2.Enabled = true;
+            button2.FlatStyle = FlatStyle.Standard;
+            button3.Enabled = true;
+            button3.FlatStyle = FlatStyle.Standard;
+
+            selectedCurrency = false;
+            button4.Enabled = true;
+            button4.FlatStyle = FlatStyle.Standard;
+            button5.Enabled = true;
+            button5.FlatStyle = FlatStyle.Standard;
+
+            button7.Enabled = true;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            MalfunctionTable malfunctionTable = new MalfunctionTable(workTollStation);
+            malfunctionTable.Show();
         }
     }
 }

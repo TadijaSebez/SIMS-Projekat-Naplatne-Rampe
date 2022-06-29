@@ -31,7 +31,11 @@ namespace NaplatnaRampa.contoller
         
         }
 
-
+        public TollRoad GetRandom(Random rng)
+        {
+            List<TollRoad> allRoads = tollRoadRepository.GetAll();
+            return allRoads[rng.Next(allRoads.Count)];
+        }
         public TollRoad GetByStationAndNumber(ObjectId tollstaitonId, int number) {
             foreach (TollRoad t in tollRoadRepository.GetAll())
             {
