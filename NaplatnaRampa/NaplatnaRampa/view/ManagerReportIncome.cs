@@ -55,5 +55,10 @@ namespace NaplatnaRampa.view
             labeldin.Text = totalRsd.ToString();
 
         }
+
+        private void labeleur_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
