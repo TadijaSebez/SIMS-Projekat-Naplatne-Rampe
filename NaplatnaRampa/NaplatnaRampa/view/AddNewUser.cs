@@ -155,6 +155,7 @@ namespace NaplatnaRampa.view
             User newUser = new User(checkName, checkSurname, checkEmail, password, phone, address._id, role);
             userController.Save(newUser);
             MessageBox.Show("Uspešno ste dodali korisnika", "Obaveštenje");
+            this.Hide();
 
 
         }
