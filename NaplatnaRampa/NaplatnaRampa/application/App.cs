@@ -19,7 +19,7 @@ namespace NaplatnaRampa.application
         public static void Main(string[] args)
         {
            
-
+            Globals.Load();
             // Application.Run(new Login(Globals.database));
             //Application.Run(new TableUsers());
             //Application.Run(new TablePricelists());
@@ -28,8 +28,11 @@ namespace NaplatnaRampa.application
 
 
             //Application.Run(new TollStationTable());
-            Application.Run(new TollStationReport());
-            //Application.Run(new IncomeReport());
+
+            //Application.Run(new TollStationReport());
+            Application.Run(new IncomeReport());
+
+
 
         
             //Application.Run(new AddNewUser());
