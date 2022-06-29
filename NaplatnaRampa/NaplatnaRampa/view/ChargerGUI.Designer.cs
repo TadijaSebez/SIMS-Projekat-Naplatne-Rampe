@@ -55,6 +55,10 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.slipTollRoadNumberTextBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.stateLabel = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -309,12 +313,56 @@
             this.slipTollRoadNumberTextBox.TabIndex = 26;
             this.slipTollRoadNumberTextBox.TextChanged += new System.EventHandler(this.slipTollRoadNumberTextBox_TextChanged);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(667, 172);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(116, 38);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "STANJE";
+            // 
+            // stateLabel
+            // 
+            this.stateLabel.AutoSize = true;
+            this.stateLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.stateLabel.Location = new System.Drawing.Point(647, 214);
+            this.stateLabel.Name = "stateLabel";
+            this.stateLabel.Size = new System.Drawing.Size(151, 20);
+            this.stateLabel.TabIndex = 28;
+            this.stateLabel.Text = "Odabir radnog mesta";
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(663, 116);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(125, 29);
+            this.button8.TabIndex = 29;
+            this.button8.Text = "Potvrdi";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(663, 247);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(125, 29);
+            this.button9.TabIndex = 30;
+            this.button9.Text = "Otkloni kvar";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // ChargerGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.stateLabel);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.slipTollRoadNumberTextBox);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -380,5 +428,9 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox slipTollRoadNumberTextBox;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label stateLabel;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
     }
 }

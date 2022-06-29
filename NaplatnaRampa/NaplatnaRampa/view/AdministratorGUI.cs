@@ -17,11 +17,30 @@ namespace NaplatnaRampa.view
         {
             InitializeComponent();
             this.loggedUser = loggedUser;
+            label2.Text = loggedUser.name + " " + loggedUser.surname;
         }
 
         private void AdministratorGUI_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TableUsers table = new TableUsers();
+            table.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login(Globals.database);
+            login.Show();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace NaplatnaRampa.view
         {
             InitializeComponent();
             this.loggedUser = loggedUser;
+            label2.Text = loggedUser.name + " " + loggedUser.surname;
 
 
 
@@ -23,6 +24,32 @@ namespace NaplatnaRampa.view
         private void ManagerGUI_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login(Globals.database);
+            login.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MalfunctionAllReport malfunctionAll = new MalfunctionAllReport();
+            malfunctionAll.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            IncomeReport incomeReport = new IncomeReport(true);
+            incomeReport.Show();
+            
         }
     }
 }

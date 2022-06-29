@@ -9,8 +9,8 @@ namespace NaplatnaRampa.model
     public class Malfunction
     {
         public ObjectId _id { get; set; }
-        [BsonElement("tollStationId")]
-        public ObjectId tollStationId { get; set; }
+        [BsonElement("tollRoadId")]
+        public ObjectId tollRoadId { get; set; }
 
         [BsonElement("name")]
         public String name { get; set; }
@@ -28,9 +28,9 @@ namespace NaplatnaRampa.model
         [BsonElement("dateTimeEnd")]
         public DateTime dateTimeEnd { get; set; }
 
-        public Malfunction(ObjectId tollStationId, String name, String description, DateTime dateTimeBegin, Boolean fixing, DateTime dateTimeEnd)
+        public Malfunction(ObjectId tollRoadId, String name, String description, DateTime dateTimeBegin, Boolean fixing, DateTime dateTimeEnd)
         {
-            this.tollStationId = tollStationId;
+            this.tollRoadId = tollRoadId;
             this.name = name;
             this.description = description;
             this.dateTimeBegin = dateTimeBegin;

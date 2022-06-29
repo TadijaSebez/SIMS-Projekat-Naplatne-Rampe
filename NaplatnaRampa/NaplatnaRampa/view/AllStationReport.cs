@@ -15,7 +15,7 @@ namespace NaplatnaRampa.view
     {
         readonly public TollStationController tollStationController;
         readonly public PlaceController placeController;
-        readonly public PaymentController paymentController;
+        readonly public PhysicalPaymentController paymentController;
         public int numDays;
         public AllStationReport(int number)
         {
@@ -23,7 +23,7 @@ namespace NaplatnaRampa.view
             this.numDays = number;
             tollStationController = Globals.container.Resolve<TollStationController>();
             placeController = Globals.container.Resolve<PlaceController>();
-            paymentController = Globals.container.Resolve<PaymentController>();
+            paymentController = Globals.container.Resolve<PhysicalPaymentController>();
         }
 
         private void AllStationReport_Load(object sender, EventArgs e)

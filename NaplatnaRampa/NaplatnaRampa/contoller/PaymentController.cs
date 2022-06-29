@@ -23,18 +23,6 @@ namespace NaplatnaRampa.contoller
             return paymentRepository.GetById(id);
         }
 
-        public List<Payment> GetPaymentsSpecified(int number)
-        {
-            DateTime added = DateTime.Now.AddDays(number);
-            List<Payment> payments = new List<Payment>();
-            foreach(Payment payment in paymentRepository.GetAll())
-            {
-                if (payment.dateTime >= added)
-                {
-                    payments.Add(payment);
-                }
-            }
-            return payments;
-        }
+
     }
 }
