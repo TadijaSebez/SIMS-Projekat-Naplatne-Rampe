@@ -35,6 +35,7 @@ namespace NaplatnaRampa.view
 
         private void TollRoadTable_Load(object sender, EventArgs e)
         {
+            tollRoadController.AddUpdateCallback(RefreshTable);
             label3.Text = tollStation.name.ToUpper();
          
             tollRoadTable.Columns.Add("BROJ NAPLATNOG MJESTA");
@@ -57,7 +58,34 @@ namespace NaplatnaRampa.view
             dataGridView1.DataSource = tollRoadTable;
 
         }
-        private void label3_Click(object sender, EventArgs e)
+
+        public void RefreshTable()
+        {
+            //refresh
+            tollRoadTable.Clear();
+            List<TollRoad> tollRoadList = new List<TollRoad>();
+            tollStation = tollStationController.GetById(tollStation._id);
+            foreach (ObjectId o in tollStation.tollRoadIds)
+            {
+                tollRoadList.Add(tollRoadController.GetById(o));
+
+            }
+            foreach (TollRoad tr in tollRoadList)
+            {
+                if (tr.active)
+                {
+                    tollRoadTable.Rows.Add(tr.number, "AKTIVNA");
+                }
+                else
+                {
+                    tollRoadTable.Rows.Add(tr.number, "DEAKTIVIRANA");
+                }
+            }
+            dataGridView1.DataSource = tollRoadTable;
+        }
+
+
+            private void label3_Click(object sender, EventArgs e)
         {
 
         }

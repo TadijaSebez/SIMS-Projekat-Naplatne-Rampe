@@ -11,11 +11,26 @@ namespace NaplatnaRampa.contoller
     public class TollStationController
     {
         public ITollStationRepository tollStationRepository;
+        private List<Action> callbackFunctions;
         public TollStationController()
         {
             this.tollStationRepository = Globals.container.Resolve<ITollStationRepository>();
+            this.callbackFunctions = new List<Action>();
         }
 
+
+        public void AddUpdateCallback(Action function)
+        {
+            callbackFunctions.Add(function);
+        }
+
+        private void Updated()
+        {
+            foreach (Action function in callbackFunctions)
+            {
+                function();
+            }
+        }
         public List<TollStation> TollStations()
         {
             return tollStationRepository.GetAll();
@@ -35,7 +50,7 @@ namespace NaplatnaRampa.contoller
         {
 
             tollStationRepository.Delete(id);
-
+            Updated();
         }
 
 
@@ -48,13 +63,14 @@ namespace NaplatnaRampa.contoller
 
         public void Insert(TollStation tollStation) {
             tollStationRepository.Insert(tollStation);
-        
+            Updated();
         }
 
 
         public void Update(TollStation tollStation) {
 
             tollStationRepository.Update(tollStation);
+            Updated();
         }
 
 
