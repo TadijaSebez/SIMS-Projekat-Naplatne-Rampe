@@ -46,10 +46,13 @@ namespace NaplatnaRampa.view
             {
                 TollRoad tollRoad = tollRoadController.GetById(malfunction.tollRoadId);
                 TollStation tollStation = tollStationController.GetById(tollRoad.tollStationId);
-                if (tollStation.name.Equals(tollStationSelected.name))
+                if (tollStation != null)
                 {
-                    malfunctionTable.Rows.Add(tollRoad.number, malfunction.name, malfunction.description, malfunction.dateTimeBegin, malfunction.fixing, malfunction.dateTimeEnd == DateTime.MaxValue ? "/" : malfunction.dateTimeEnd.ToString());
-                    this.malfunctions.Add(malfunction);
+                    if (tollStation.name.Equals(tollStationSelected.name))
+                    {
+                        malfunctionTable.Rows.Add(tollRoad.number, malfunction.name, malfunction.description, malfunction.dateTimeBegin, malfunction.fixing, malfunction.dateTimeEnd == DateTime.MaxValue ? "/" : malfunction.dateTimeEnd.ToString());
+                        this.malfunctions.Add(malfunction);
+                    }
                 }
 
             }
