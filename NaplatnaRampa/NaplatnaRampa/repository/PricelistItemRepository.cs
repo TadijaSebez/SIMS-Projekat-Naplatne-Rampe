@@ -26,6 +26,11 @@ namespace NaplatnaRampa.repository
             return collection.Find(item => item._id == id).FirstOrDefault();
         }
 
+        public List<PricelistItem> GetItems(List<ObjectId> ids)
+        {
+            return collection.Find(item => ids.Contains(item._id)).ToList();
+        }
+
         public void Insert(PricelistItem pricelistItem)
         {
             collection.InsertOne(pricelistItem);
