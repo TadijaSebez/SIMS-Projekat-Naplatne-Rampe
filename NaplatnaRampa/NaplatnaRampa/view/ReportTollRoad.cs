@@ -16,7 +16,7 @@ namespace NaplatnaRampa.view
     {
         public TollStation tollStation;
         public List<Payment> payments;
-        public PaymentController paymentController;
+        public PhysicalPaymentController paymentController;
         public TollRoadController tollRoadController;
         public TollStationController tollStationController;
  
@@ -26,7 +26,7 @@ namespace NaplatnaRampa.view
             this.tollStation = tollStation;
             this.payments = payments;
             label2.Text = tollStation.name;
-            this.paymentController = Globals.container.Resolve<PaymentController>();
+            this.paymentController = Globals.container.Resolve<PhysicalPaymentController>();
             this.tollRoadController = Globals.container.Resolve<TollRoadController>();
             this.tollStationController = Globals.container.Resolve<TollStationController>();
         }
