@@ -77,6 +77,12 @@ namespace NaplatnaRampa.contoller
             TollRoad tollRoad = tollRoadController.GetRandom(rng);
             TollStation tollStation = tollStationController.GetById(tollRoad.tollStationId);
 
+            while (tollStation.name != "Inđija")
+            {
+                tollRoad = tollRoadController.GetRandom(rng);
+                tollStation = tollStationController.GetById(tollRoad.tollStationId);
+            }
+
             List<string> possibleNames = new List<string>
             {
                 "Čitač taga",
