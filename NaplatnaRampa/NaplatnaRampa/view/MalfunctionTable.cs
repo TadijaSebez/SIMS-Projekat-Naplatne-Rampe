@@ -14,19 +14,25 @@ namespace NaplatnaRampa.view
     {
         public MalfunctionController malfunctionController;
         public TollStationController tollStationController;
+        public TollRoadController tollRoadController;
         public TollStation tollStationSelected;
+        private List<Malfunction> malfunctions;
         public MalfunctionTable(TollStation tollStation)
         {
             InitializeComponent();
             malfunctionController = Globals.container.Resolve<MalfunctionController>();
             tollStationController = Globals.container.Resolve<TollStationController>();
+            tollRoadController = Globals.container.Resolve<TollRoadController>();
             this.tollStationSelected = tollStation;
             label2.Text = tollStation.name;
         }
 
-        private void ManufactionTable_Load(object sender, EventArgs e)
+        private void CreateTable()
         {
+            this.malfunctions = new List<Malfunction>();
+
             DataTable malfunctionTable = new DataTable();
+            malfunctionTable.Columns.Add("Broj naplatnog mesta");
             malfunctionTable.Columns.Add("Uredjaj");
             malfunctionTable.Columns.Add("Opis");
             malfunctionTable.Columns.Add("Datum nastanka kvara");
@@ -34,15 +40,21 @@ namespace NaplatnaRampa.view
             malfunctionTable.Columns.Add("Datum popravljanja kvara");
             foreach (Malfunction malfunction in malfunctionController.Malfunctions())
             {
-                TollStation tollStation = tollStationController.GetById(malfunction.tollStationId);
+                TollRoad tollRoad = tollRoadController.GetById(malfunction.tollRoadId);
+                TollStation tollStation = tollStationController.GetById(tollRoad.tollStationId);
                 if (tollStation.name.Equals(tollStationSelected.name))
                 {
-                    malfunctionTable.Rows.Add( malfunction.name, malfunction.description, malfunction.dateTimeBegin, malfunction.fixing, malfunction.dateTimeEnd);
+                    malfunctionTable.Rows.Add(tollRoad.number, malfunction.name, malfunction.description, malfunction.dateTimeBegin, malfunction.fixing, malfunction.dateTimeEnd == DateTime.MaxValue ? "/" : malfunction.dateTimeEnd.ToString());
+                    this.malfunctions.Add(malfunction);
                 }
-                
+
             }
             malfunctionGridView.DataSource = malfunctionTable;
+        }
 
+        private void ManufactionTable_Load(object sender, EventArgs e)
+        {
+            CreateTable();
         }
 
         private void malfunctionGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -53,6 +65,27 @@ namespace NaplatnaRampa.view
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int index = -1;
+            foreach (DataGridViewRow row in malfunctionGridView.SelectedRows)
+            {
+                index = row.Index;
+            }
+
+            if (index != -1)
+            {
+                Malfunction malfunction = malfunctions[index];
+                if (!malfunction.fixing)
+                {
+                    malfunction.fixing = true;
+                    malfunction.dateTimeEnd = DateTime.Now;
+                    malfunctionController.Update(malfunction);
+                    CreateTable();
+                }
+            }
         }
     }
 }

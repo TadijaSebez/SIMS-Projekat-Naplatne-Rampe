@@ -42,7 +42,7 @@ namespace NaplatnaRampa
             builder.RegisterType<SlipController>().AsSelf();
             builder.RegisterType<PhysicalPaymentController>().AsSelf();
             builder.RegisterType<DriverController>().AsSelf();
-            builder.RegisterType<MalfunctionController>().AsSelf();
+            builder.RegisterType<MalfunctionController>().SingleInstance();
             builder.RegisterType<PaymentController>().AsSelf();
             builder.RegisterType<TollRoadController>().AsSelf();
         }
