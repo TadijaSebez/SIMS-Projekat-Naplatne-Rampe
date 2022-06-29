@@ -17,20 +17,17 @@ namespace NaplatnaRampa.application
     internal class App
     {
         public static void Main(string[] args)
-        {
-            Globals.Load();   
-
-            //Application.Run(new Login(Globals.database));
+        {    
+            Globals.Load();
+            // Application.Run(new Login(Globals.database));
             //Application.Run(new TableUsers());
-            Application.Run(new TablePricelists());
+            //Application.Run(new TablePricelists());
             //  IPricelistRepository repo = Globals.container.Resolve<IPricelistRepository>();
             //Application.Run(new TablePricelistItems(repo.GetAll()[1]));
 
-
             //Application.Run(new TollStationTable());
             //Application.Run(new TollStationReport());
-            //Application.Run(new IncomeReport());
-
+            Application.Run(new IncomeReport());
         
             //Application.Run(new AddNewUser());
         }

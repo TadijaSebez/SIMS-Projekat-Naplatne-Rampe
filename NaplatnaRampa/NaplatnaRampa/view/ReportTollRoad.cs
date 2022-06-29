@@ -16,7 +16,7 @@ namespace NaplatnaRampa.view
     {
         public TollStation tollStation;
         public List<Payment> payments;
-        public PaymentController paymentController;
+        public PhysicalPaymentController paymentController;
         public TollRoadController tollRoadController;
         public TollStationController tollStationController;
  
@@ -26,7 +26,7 @@ namespace NaplatnaRampa.view
             this.tollStation = tollStation;
             this.payments = payments;
             label2.Text = tollStation.name;
-            this.paymentController = Globals.container.Resolve<PaymentController>();
+            this.paymentController = Globals.container.Resolve<PhysicalPaymentController>();
             this.tollRoadController = Globals.container.Resolve<TollRoadController>();
             this.tollStationController = Globals.container.Resolve<TollStationController>();
         }
@@ -46,11 +46,11 @@ namespace NaplatnaRampa.view
         {
             DataTable tollStationTable = new DataTable();
             tollStationTable.Columns.Add("Broj naplatnog mesta");
-            tollStationTable.Columns.Add("Prihodi u RSD");
             tollStationTable.Columns.Add("Prihodi u EUR");
+            tollStationTable.Columns.Add("Prihodi u RSD");
             float totalpriceEur = 0;
             float totalpriceRsd = 0;
-            foreach(ObjectId roadId in tollStation.tollRoadIds)
+            foreach (ObjectId roadId in tollStation.tollRoadIds)
             {
                 float priceRoadEur = 0;
                 float priceRoadRsd = 0;
@@ -59,7 +59,7 @@ namespace NaplatnaRampa.view
                 {
                     if (payment.tollRoadId.Equals(roadId))
                     {
-                        if (payment.currency == Currency.TypeOfCurrency.EUR)
+                       if (payment.currency == Currency.TypeOfCurrency.EUR)
                         {
                             priceRoadEur += payment.price;
                             totalpriceEur += payment.price;
@@ -69,16 +69,15 @@ namespace NaplatnaRampa.view
                             priceRoadRsd += payment.price;
                             totalpriceRsd += payment.price;
                         }
-                       
-                        
                     } 
                 }
-                tollStationTable.Rows.Add(tollRoad.number, priceRoadRsd.ToString(), priceRoadEur.ToString());
+                tollStationTable.Rows.Add(tollRoad.number, priceRoadEur, priceRoadRsd);
 
             }
            
             dataGridView1.DataSource = tollStationTable;
-            label3.Text = totalpriceRsd.ToString() + "RSD  " + totalpriceEur.ToString() + "EUR";
+            label3.Text = totalpriceRsd.ToString() + "RSD " + totalpriceEur.ToString() + "EUR";
+
 
         }
 
