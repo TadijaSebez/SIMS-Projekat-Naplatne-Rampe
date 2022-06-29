@@ -30,37 +30,50 @@ namespace NaplatnaRampa.contoller
             return malfunctionRepository.GetAll();
 
         }
-            public void Save(Malfunction malfunction)
+        public void Save(Malfunction malfunction)
+        {
+            malfunctionRepository.Insert(malfunction);
+        }
+
+        public bool IsInMalfunction(TollStation station)
+        {
+            foreach (Malfunction malfunction in malfunctionRepository.GetAll())
             {
-                malfunctionRepository.Insert(malfunction);
+                if (malfunction.tollStationId == station._id)
+                {
+                    if (malfunction.dateTimeBegin < DateTime.Now && malfunction.dateTimeEnd > DateTime.Now)
+                        return true;
+                }
             }
+            return false;
+        }
 
-            public void SimulateDetection(Random rng)
-            {
-                TollStation tollStation = tollStationController.GetRandom(rng);
+        public void SimulateDetection(Random rng)
+        {
+            TollStation tollStation = tollStationController.GetRandom(rng);
 
-                List<string> possibleNames = new List<string>
+            List<string> possibleNames = new List<string>
             {
                 "Čitač taga",
                 "Čitač tablice",
                 "Rampa"
             };
 
-                string name = possibleNames[rng.Next(possibleNames.Count)];
+            string name = possibleNames[rng.Next(possibleNames.Count)];
 
-                DateTime beginDateTime = DateTime.Now;
-                int hours = rng.Next(100);
-                int minutes = rng.Next(60);
-                int seconds = rng.Next(60);
-                TimeSpan deltaTime = new TimeSpan(hours, minutes, seconds);
-                DateTime endDateTime = beginDateTime + deltaTime;
+            DateTime beginDateTime = DateTime.Now;
+            int hours = rng.Next(100);
+            int minutes = rng.Next(60);
+            int seconds = rng.Next(60);
+            TimeSpan deltaTime = new TimeSpan(hours, minutes, seconds);
+            DateTime endDateTime = beginDateTime + deltaTime;
 
-                string description = "Sistem je detektovao kvar na uredjaju "
-                    + name + " na naplatnoj stanici " + tollStation.name + ".";
+            string description = "Sistem je detektovao kvar na uredjaju "
+                + name + " na naplatnoj stanici " + tollStation.name + ".";
 
-                Malfunction malfunction = new Malfunction(tollStation._id, name, description, beginDateTime, false, endDateTime);
-                malfunctionRepository.Insert(malfunction);
+            Malfunction malfunction = new Malfunction(tollStation._id, name, description, beginDateTime, false, endDateTime);
+            malfunctionRepository.Insert(malfunction);
 
-            }
         }
     }
+}
