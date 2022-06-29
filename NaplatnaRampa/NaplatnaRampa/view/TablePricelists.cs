@@ -49,5 +49,20 @@ namespace NaplatnaRampa.view
         }
 
         private List<Pricelist> pricelists;
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Pricelist pricelist = pricelistController.GetActive();
+
+            if (pricelist != null)
+            {
+                TablePricelistItems table = new TablePricelistItems(pricelist);
+                table.Show();
+            }
+            else
+            {
+                MessageBox.Show("Cena za deonicu nije u sistemu!", "Greška");
+            }
+        }
     }
 }
