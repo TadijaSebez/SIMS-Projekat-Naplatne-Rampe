@@ -28,7 +28,7 @@ namespace NaplatnaRampa.view
 
         private void TollStationCRUD_Load(object sender, EventArgs e)
         {
-            
+            tollStationController.AddUpdateCallback(RefreshTable);
             tollStationTable.Columns.Add("NAZIV");
             tollStationTable.Columns.Add("MJESTO");
             foreach (TollStation ts in tollStationController.TollStations())
@@ -69,6 +69,19 @@ namespace NaplatnaRampa.view
             dataGridView1.DataSource = tollStationTable;
 
         }
+
+        public void RefreshTable()
+        {
+            tollStationTable.Clear();
+            foreach (TollStation ts in tollStationController.TollStations())
+            {
+                Place place = placeController.GetById(ts.placeId);
+                tollStationTable.Rows.Add(ts.name, place.name);
+
+            }
+            dataGridView1.DataSource = tollStationTable;
+        }
+
 
         /*
         private void button2_Click(object sender, EventArgs e)         // delete OVO JE ZA KIKUUU !!!!
