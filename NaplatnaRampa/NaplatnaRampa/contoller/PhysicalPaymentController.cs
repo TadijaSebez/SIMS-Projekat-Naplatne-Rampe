@@ -38,5 +38,31 @@ namespace NaplatnaRampa.contoller
             }
             return payments;
         }
+
+        public List<float> GetTotalPricePayments(ObjectId objectId)
+        {
+            List<float> prices = new List<float>();
+            float eur = 0;
+            float rsd = 0;
+            foreach(PhysicalPayment payment in paymentRepository.GetAll())
+            {
+                if (payment.tollRoadId.Equals(objectId))
+                {
+                    if (payment.currency == Currency.TypeOfCurrency.RSD)
+                    {
+                        rsd += payment.price;
+
+                    }
+                    else
+                    {
+                        eur += payment.price;
+                    }
+                }
+            }
+            prices.Add(eur);
+            prices.Add(rsd);
+            return prices;
+
+        }
     }
 }
