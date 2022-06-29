@@ -64,5 +64,10 @@ namespace NaplatnaRampa.view
                 MessageBox.Show("Cena za deonicu nije u sistemu!", "Greška");
             }
         }
+
+        private void gridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -40,17 +40,18 @@ namespace NaplatnaRampa.view
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(56, 26);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Chocolate;
+            this.label1.Location = new System.Drawing.Point(192, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(369, 28);
+            this.label1.Size = new System.Drawing.Size(472, 28);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Izveštaj o prihodima za odredjeni period:";
+            this.label1.Text = "IZVJESTAJ O PRIHODIMA ZA ODABRANI PERIOD";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Coral;
+            this.button1.BackColor = System.Drawing.Color.LightSalmon;
             this.button1.Location = new System.Drawing.Point(75, 91);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(189, 109);
@@ -61,8 +62,8 @@ namespace NaplatnaRampa.view
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Coral;
-            this.button2.Location = new System.Drawing.Point(540, 91);
+            this.button2.BackColor = System.Drawing.Color.LightSalmon;
+            this.button2.Location = new System.Drawing.Point(544, 91);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(194, 109);
             this.button2.TabIndex = 2;
@@ -72,7 +73,7 @@ namespace NaplatnaRampa.view
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Coral;
+            this.button3.BackColor = System.Drawing.Color.LightSalmon;
             this.button3.Location = new System.Drawing.Point(304, 91);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(193, 109);
@@ -83,7 +84,7 @@ namespace NaplatnaRampa.view
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.Coral;
+            this.button4.BackColor = System.Drawing.Color.LightSalmon;
             this.button4.Location = new System.Drawing.Point(192, 256);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(182, 109);
@@ -94,7 +95,7 @@ namespace NaplatnaRampa.view
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.Coral;
+            this.button5.BackColor = System.Drawing.Color.LightSalmon;
             this.button5.Location = new System.Drawing.Point(436, 256);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(189, 109);
@@ -107,7 +108,7 @@ namespace NaplatnaRampa.view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Bisque;
+            this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(832, 474);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);

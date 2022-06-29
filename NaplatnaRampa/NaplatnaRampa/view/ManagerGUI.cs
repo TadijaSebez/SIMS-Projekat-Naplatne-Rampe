@@ -16,7 +16,7 @@ namespace NaplatnaRampa.view
         {
             InitializeComponent();
             this.loggedUser = loggedUser;
-            label2.Text = loggedUser.name + " " + loggedUser.surname;
+            label2.Text = (loggedUser.name + " " + loggedUser.surname).ToUpper();
 
 
 
