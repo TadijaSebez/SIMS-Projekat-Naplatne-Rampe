@@ -38,7 +38,11 @@ namespace NaplatnaRampa.view
             malfunctionTable.Columns.Add("Datum nastanka kvara");
             malfunctionTable.Columns.Add("Otklonjen kvar");
             malfunctionTable.Columns.Add("Datum popravljanja kvara");
-            foreach (Malfunction malfunction in malfunctionController.Malfunctions())
+            
+            List<Malfunction> allMalfunctions = malfunctionController.Malfunctions();
+            allMalfunctions.Sort(delegate(Malfunction x, Malfunction y) { return y.dateTimeBegin.CompareTo(x.dateTimeBegin); });
+            
+            foreach (Malfunction malfunction in allMalfunctions)
             {
                 TollRoad tollRoad = tollRoadController.GetById(malfunction.tollRoadId);
                 TollStation tollStation = tollStationController.GetById(tollRoad.tollStationId);
@@ -55,7 +59,7 @@ namespace NaplatnaRampa.view
         private void ManufactionTable_Load(object sender, EventArgs e)
         {
             CreateTable();
-            //malfunctionController.AddUpdateCallback(CreateTable);
+            malfunctionController.AddUpdateCallback(() => malfunctionGridView.Invoke(new Action(() => CreateTable())));
         }
 
         private void malfunctionGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
