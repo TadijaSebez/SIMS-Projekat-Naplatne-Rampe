@@ -23,7 +23,7 @@ namespace NaplatnaRampa.contoller
             return pricelistRepository.GetAll();
         }
 
-        public PricelistItem GetPriceForSection(Section section, Vehicle.VehicleType vehicleType, Currency.TypeOfCurrency currency)
+        public Pricelist GetActive()
         {
             Pricelist activePricelist = null;
             foreach (Pricelist pricelist in Pricelists())
@@ -34,6 +34,12 @@ namespace NaplatnaRampa.contoller
                         activePricelist = pricelist;
                 }
             }
+            return activePricelist;
+        }
+
+        public PricelistItem GetPriceForSection(Section section, Vehicle.VehicleType vehicleType, Currency.TypeOfCurrency currency)
+        {
+            Pricelist activePricelist = GetActive();
             if (activePricelist == null)
                 return null;
             foreach (ObjectId itemId in activePricelist.itemIds)
