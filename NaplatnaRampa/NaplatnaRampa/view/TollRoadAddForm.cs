@@ -43,9 +43,9 @@ namespace NaplatnaRampa.view
             }
             else {
                 TollRoad tr = new TollRoad(brojMjesta, tollStation._id);
-                tollRoadController.Insert(tr);
                 tollStation.tollRoadIds.Add(tr._id);
                 tollStationController.Update(tollStation);
+                tollRoadController.Insert(tr);
                 MessageBox.Show("NAPLATNO MJESTO JE USPJESNO DODATO!");
                 this.Hide();
             }
