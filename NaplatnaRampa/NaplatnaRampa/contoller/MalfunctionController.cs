@@ -96,13 +96,15 @@ namespace NaplatnaRampa.contoller
             int minutes = rng.Next(60);
             int seconds = rng.Next(60);
             DateTime endDateTime = DateTime.MaxValue;
-
-            string description = "Sistem je detektovao kvar na uredjaju "
-                + name + " na mestu broj " + tollRoad.number + " na naplatnoj stanici " + tollStation.name + ".";
-
-            Malfunction malfunction = new Malfunction(tollRoad._id, name, description, beginDateTime, false, endDateTime);
-            malfunctionRepository.Insert(malfunction);
-            Updated();
+            if (tollStation != null)
+            {
+                string description = "Sistem je detektovao kvar na uredjaju "
+                    + name + " na mestu broj " + tollRoad.number + " na naplatnoj stanici " + tollStation.name + ".";
+                Malfunction malfunction = new Malfunction(tollRoad._id, name, description, beginDateTime, false, endDateTime);
+                malfunctionRepository.Insert(malfunction);
+                Updated();
+            }
+          
         }
     }
 }
