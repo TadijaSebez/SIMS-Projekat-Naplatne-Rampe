@@ -26,6 +26,8 @@ namespace NaplatnaRampa.application
             backgroundThread.Start();
             Application.Run(new Login(Globals.database));
 
+
+            
             
 
      
