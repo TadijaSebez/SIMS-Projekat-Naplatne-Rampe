@@ -39,8 +39,9 @@ namespace NaplatnaRampa.contoller
             return payments;
         }
 
-        public List<float> GetTotalPricePayments(ObjectId objectId)
+        public List<float> GetTotalPricePayments(ObjectId objectId, int number)
         {
+            DateTime added = DateTime.Now.AddDays(-number);
             List<float> prices = new List<float>();
             float eur = 0;
             float rsd = 0;
@@ -48,15 +49,20 @@ namespace NaplatnaRampa.contoller
             {
                 if (payment.tollRoadId.Equals(objectId))
                 {
-                    if (payment.currency == Currency.TypeOfCurrency.RSD)
+                    if (payment.dateTime >= added)
                     {
-                        rsd += payment.price;
+                        if (payment.currency == Currency.TypeOfCurrency.RSD)
+                        {
+                            rsd += payment.price;
+
+                        }
+                        else
+                        {
+                            eur += payment.price;
+                        }
 
                     }
-                    else
-                    {
-                        eur += payment.price;
-                    }
+                        
                 }
             }
             prices.Add(eur);

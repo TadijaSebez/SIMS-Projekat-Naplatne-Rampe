@@ -76,7 +76,7 @@ namespace NaplatnaRampa.view
             }
            
             dataGridView1.DataSource = tollStationTable;
-            label3.Text = totalpriceRsd.ToString() + "RSD " + totalpriceEur.ToString() + "EUR";
+            label3.Text = totalpriceRsd.ToString() + "RSD                " + totalpriceEur.ToString() + "EUR";
 
 
         }
