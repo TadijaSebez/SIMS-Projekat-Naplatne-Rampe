@@ -31,7 +31,7 @@ namespace NaplatnaRampa.view
 
         private void TableUsers_Load(object sender, EventArgs e)
         {
-             
+            userController.AddUpdateCallback(RefreshTable);
             userTable.Columns.Add("Ime");
             userTable.Columns.Add("Prezime");
             userTable.Columns.Add("Email");
@@ -102,7 +102,7 @@ namespace NaplatnaRampa.view
 
         }
 
-        private void button4_Click_1(object sender, EventArgs e)
+        public void RefreshTable()
         {
             //refresh
             userTable.Clear();
@@ -117,6 +117,11 @@ namespace NaplatnaRampa.view
 
             }
             usersGridView.DataSource = userTable;
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            // Ne radi nista. Obrisati dugme
         }
     }
 }

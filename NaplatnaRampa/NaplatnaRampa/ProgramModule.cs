@@ -31,7 +31,7 @@ namespace NaplatnaRampa
             builder.RegisterType<PricelistItemRepository>().As<IPricelistItemRepository>();
             builder.RegisterType<MalfunctionRepository>().As<IMalfunctionRepository>();
             
-            builder.RegisterType<UserController>().AsSelf();
+            builder.RegisterType<UserController>().SingleInstance();
             builder.RegisterType<AddressController>().AsSelf();
             builder.RegisterType<PlaceController>().AsSelf();
             builder.RegisterType<PricelistController>().AsSelf();
