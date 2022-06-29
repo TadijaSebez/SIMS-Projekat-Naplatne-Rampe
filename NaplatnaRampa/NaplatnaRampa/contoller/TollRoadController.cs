@@ -10,10 +10,25 @@ namespace NaplatnaRampa.contoller
     public class TollRoadController
     {
         public ITollRoadRepository tollRoadRepository;
+        private List<Action> callbackFunctions;
 
         public TollRoadController()
         {
             this.tollRoadRepository = Globals.container.Resolve<ITollRoadRepository>();
+            this.callbackFunctions = new List<Action>();
+        }
+
+        public void AddUpdateCallback(Action function)
+        {
+            callbackFunctions.Add(function);
+        }
+
+        private void Updated()
+        {
+            foreach (Action function in callbackFunctions)
+            {
+                function();
+            }
         }
 
         public TollRoad GetByStationAndNumber(TollStation station, int number)
@@ -28,7 +43,7 @@ namespace NaplatnaRampa.contoller
 
         public void Insert(TollRoad tollRoad) {
             tollRoadRepository.Insert(tollRoad);
-        
+            Updated();
         }
 
         public TollRoad GetRandom(Random rng)
@@ -51,10 +66,11 @@ namespace NaplatnaRampa.contoller
 
         public void Update(TollRoad tollroad) {
             tollRoadRepository.Update(tollroad);
-        
+            Updated();
         }
         public void Delete(TollRoad t) {
             tollRoadRepository.Delete(t._id);
+            Updated();
         }
 
         public List<Int32> getNums(TollStation station)
