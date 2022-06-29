@@ -52,5 +52,10 @@ namespace NaplatnaRampa.view
         {
 
         }
+
+        private void TollStationCreateForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

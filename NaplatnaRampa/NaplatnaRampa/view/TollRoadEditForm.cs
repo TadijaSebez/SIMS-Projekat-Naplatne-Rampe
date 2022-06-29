@@ -29,10 +29,18 @@ namespace NaplatnaRampa.view
         {
             String broj = textBox1.Text;
             int brojMjesta = int.Parse(broj);
-            tollRoad.number = brojMjesta;
-            tollRoadController.Update(tollRoad);
-            MessageBox.Show("NAPLATNO MJESTO JE USPJESNO AZURIRANO!");
-            this.Hide();
+            List<Int32> nums =  tollRoadController.getNums(tollstation);
+            if (nums.Contains(brojMjesta))
+            {
+                MessageBox.Show("NAPLATNO MJESTO SA ZADATIM BROJEM VEC POSTOJI!");
+            }
+            else
+            {
+                tollRoad.number = brojMjesta;
+                tollRoadController.Update(tollRoad);
+                MessageBox.Show("NAPLATNO MJESTO JE USPJESNO AZURIRANO!");
+                this.Hide();
+            }
 
         }
 

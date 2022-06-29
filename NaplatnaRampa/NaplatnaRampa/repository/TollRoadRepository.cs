@@ -32,6 +32,12 @@ namespace NaplatnaRampa.repository
             return collection.Find(item => true).ToList();
         }
 
+        public List<TollRoad> GetAllInStation(ObjectId stationId)
+        {
+            return collection.Find(item => item.tollStationId == stationId).ToList();
+        }
+
+
         public TollRoad GetById(ObjectId id)
         {
             return collection.Find(item => item._id == id).FirstOrDefault();
