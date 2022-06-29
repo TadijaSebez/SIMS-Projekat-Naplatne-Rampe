@@ -419,5 +419,12 @@ namespace NaplatnaRampa.view
             MalfunctionTable malfunctionTable = new MalfunctionTable(workTollStation);
             malfunctionTable.Show();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login l = new Login(Globals.database);
+            l.Show();
+        }
     }
 }

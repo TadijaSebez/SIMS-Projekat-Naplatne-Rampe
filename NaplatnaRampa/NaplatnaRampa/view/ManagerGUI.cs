@@ -51,5 +51,17 @@ namespace NaplatnaRampa.view
             incomeReport.Show();
             
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            TablePricelists p = new TablePricelists();
+            p.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            TollStationTable t = new TollStationTable();
+            t.Show();
+        }
     }
 }
