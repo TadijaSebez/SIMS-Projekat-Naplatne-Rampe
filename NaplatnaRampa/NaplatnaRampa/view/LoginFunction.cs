@@ -46,7 +46,7 @@ namespace NaplatnaRampa.view
             else if (loggedUser.role == Role.ADMIN)
             {
 
-                AdministratorGUI adminGui = new AdministratorGUI(loggedUser);
+                AdministratorGui adminGui = new AdministratorGui(loggedUser);
 
                 adminGui.Show();
 
