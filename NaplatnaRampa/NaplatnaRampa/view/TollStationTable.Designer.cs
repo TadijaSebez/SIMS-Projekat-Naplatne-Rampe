@@ -38,6 +38,7 @@
             this.Add = new System.Windows.Forms.Button();
             this.messageLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,6 +116,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // button2
+            // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(122, 428);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(67, 76);
+            this.button2.TabIndex = 6;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // TollStationTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -122,6 +132,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(900, 517);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.messageLabel);
             this.Controls.Add(this.Add);
@@ -145,5 +156,6 @@
         private System.Windows.Forms.Button Add;
         private System.Windows.Forms.Label messageLabel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

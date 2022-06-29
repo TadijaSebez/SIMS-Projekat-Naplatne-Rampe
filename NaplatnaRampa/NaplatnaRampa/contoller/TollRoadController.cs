@@ -56,5 +56,17 @@ namespace NaplatnaRampa.contoller
         public void Delete(TollRoad t) {
             tollRoadRepository.Delete(t._id);
         }
+
+        public List<Int32> getNums(TollStation station)
+        {
+            List<Int32> nums = new List<Int32>();
+            foreach (TollRoad t in tollRoadRepository.GetAllInStation(station._id)){
+                nums.Add(t.number);
+                
+            }
+            return nums;
+
+
+        }
     }
 }

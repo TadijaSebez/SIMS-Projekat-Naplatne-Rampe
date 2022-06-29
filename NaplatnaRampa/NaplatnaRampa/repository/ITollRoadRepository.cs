@@ -9,5 +9,6 @@ namespace NaplatnaRampa.repository
     public interface ITollRoadRepository : IRepository<TollRoad>
     {
         TollRoad GetByStationAndNumber(ObjectId stationId, int number);
+        List<TollRoad> GetAllInStation(ObjectId stationId);
     }
 }

@@ -111,6 +111,7 @@
             this.Controls.Add(this.label1);
             this.Name = "TollStationCreateForm";
             this.Text = "TollStationCreateForm";
+            this.Load += new System.EventHandler(this.TollStationCreateForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

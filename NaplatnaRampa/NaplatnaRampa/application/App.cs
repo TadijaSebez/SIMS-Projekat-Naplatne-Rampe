@@ -20,11 +20,15 @@ namespace NaplatnaRampa.application
         {    
             Globals.Load();
 
+
+            // Application.Run(new Login(Globals.database));
+           // Application.Run(new TableUsers());
             Thread backgroundThread = new Thread(DetectionSimulation);
             backgroundThread.IsBackground = true;
             backgroundThread.Start();
 
             Application.Run(new Login(Globals.database));
+
             //Application.Run(new TablePricelists());
             //  IPricelistRepository repo = Globals.container.Resolve<IPricelistRepository>();
             //Application.Run(new TablePricelistItems(repo.GetAll()[1]));

@@ -37,12 +37,18 @@ namespace NaplatnaRampa.view
         {
             String broj = textBox1.Text;
             int brojMjesta = int.Parse(broj);
-            TollRoad tr = new TollRoad(brojMjesta, tollStation._id);
-            tollRoadController.Insert(tr);
-            tollStation.tollRoadIds.Add(tr._id);
-            tollStationController.Update(tollStation);
-            MessageBox.Show("NAPLATNO MJESTO JE USPJESNO DODATO!");
-            this.Hide();
+            List<Int32> nums  = tollRoadController.getNums(tollStation);
+            if (nums.Contains(brojMjesta)){
+                MessageBox.Show("NAPLATNO MJESTO SA ZADATIM BROJEM VEC POSTOJI!");
+            }
+            else {
+                TollRoad tr = new TollRoad(brojMjesta, tollStation._id);
+                tollRoadController.Insert(tr);
+                tollStation.tollRoadIds.Add(tr._id);
+                tollStationController.Update(tollStation);
+                MessageBox.Show("NAPLATNO MJESTO JE USPJESNO DODATO!");
+                this.Hide();
+            }
         }
 
      
