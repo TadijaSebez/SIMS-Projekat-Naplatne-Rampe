@@ -139,6 +139,7 @@ namespace NaplatnaRampa.view
             selectedUser.password = password;
             selectedUser.role = role;
             Address address = addressController.GetById(selectedUser.addressId);
+            address.street = checkStreet;
             address.number = int.Parse(number);
             Place placeN = placeController.GetPlaceByName(place);
             address.placeId = placeN._id;
@@ -146,7 +147,7 @@ namespace NaplatnaRampa.view
             addressController.Update(address);
             userController.Update(selectedUser);
             MessageBox.Show("Uspešno ste izmenili korisnika!", "Obaveštenje");
-            return;
+            this.Hide();
             
             
 
