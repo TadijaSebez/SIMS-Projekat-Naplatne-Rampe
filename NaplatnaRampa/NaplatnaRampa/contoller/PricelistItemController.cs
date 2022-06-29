@@ -23,10 +23,7 @@ namespace NaplatnaRampa.contoller
 
         public List<PricelistItem> PricelistItems(Pricelist pricelist)
         {
-            List<PricelistItem> items = new List<PricelistItem>();
-            foreach (ObjectId id in pricelist.itemIds)
-                items.Add(pricelistItemRepository.GetById(id));
-            return items;
+            return pricelistItemRepository.GetItems(pricelist.itemIds);
         }
     }
 }
